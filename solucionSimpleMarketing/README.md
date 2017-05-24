@@ -145,6 +145,16 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp5.png" width="649" height="338" alt="configuracionWp5" />
 
-5. Configuramos el plugin
+5. Una vez instalado, nos vamos a las opciones del plugin:
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp6.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp6.png" width="649" height="338" alt="configuracionWp6" />
+
+6. Y agregamos los parametros que obtuvimos de nuestro storage y nuestro cdn:
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp7.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp7.png" width="649" height="338" alt="configuracionWp7" />
+
+7. Finalmente le damos aceptar y hemos terminado!
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp8.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp8.png" width="649" height="338" alt="configuracionWp8" />
 
 

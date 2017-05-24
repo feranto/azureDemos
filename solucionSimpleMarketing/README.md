@@ -75,8 +75,9 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage4" width="649" height="338" alt="Creacion Storage 4" />
 
+5. Anotamos y guardamos el nombre de la cuenta y la clave primaria
 
-
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage5" width="649" height="338" alt="Creacion Storage 5" />
 
 ## Creación de Redis 
 1.  Paso 1

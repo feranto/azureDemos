@@ -113,6 +113,12 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN3.png" width="649" height="338" alt="Creacion CDN 3" />
 
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN4.png" width="649" height="338" alt="Creacion CDN 4" />
+
+5. Ahora procedemos a crear un nuevo endpoint conectado, le definimos un nombre y en tipo de origen escogemos "storage account",  luego en nombre del host, escogemos la cuenta de storage que creamos anteriormente.
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN5.png" width="649" height="338" alt="Creacion CDN 5" />
+
 
 ## Configuración de CDN con Wordpress
 1.  Paso 1

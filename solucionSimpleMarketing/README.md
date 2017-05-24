@@ -128,8 +128,13 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 
 ## Configuración de CDN con Wordpress
-1.  Paso 1
-2.  Paso 2
-## Configuración de Redis con Wordpress
-1.  Paso 1
-2.  Paso 2
+1.  Ahora volvemos al dashboard de nuestro wordpress, con nuestro usuario y contraseña
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp1.png" width="649" height="338" alt="configuracionWp1" />
+
+2.  Seleccionamos plugins
+3. Agregamos un nuevo plugin y buscamos "Azure"
+4. Seleccionamos e instalamos el siguiente plugin:
+5. Configuramos el plugin
+
+

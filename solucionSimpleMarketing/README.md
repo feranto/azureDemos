@@ -101,7 +101,7 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis5.png" width="649" height="338" alt="Creacion Redis 5" />
 
 ## Creación de CDN
-1.  Abrimos nuestro grupo de usuario y presionamos agregar
+1.  Abrimos nuestro grupo de recurso y presionamos agregar
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN1.png" width="649" height="338" alt="Creacion CDN 1" />
 

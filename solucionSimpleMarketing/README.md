@@ -21,7 +21,7 @@ Los componentes dentro de Azure que utilizaremos para esta solución son los sig
 3.  Dentro del grupo de recurso creamos un nuevo Wordpress
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress1.png" width="649" height="338" alt="Creacion grupo de recursos" />
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress2.png" width="649" height="338" alt="Creacion grupo de recursos" />
-1.  Al seleccionar la base de datos seleccionamos Azure MySQL
+*  Al seleccionar la base de datos seleccionamos Azure MySQL
     <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress3.png" width="649" height="338" alt="Creacion grupo de recursos" />
 4.  Una vez está el deployment listo procedemos a finalizar la instalación del Wordpress
     1.  En el portal de Azure abrimos el nuevo Wordpress

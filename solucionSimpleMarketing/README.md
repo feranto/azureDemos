@@ -20,5 +20,4 @@ Los componentes dentro de Azure que utilizaremos para esta solución son los sig
 ## Configuración de CDN con Wordpress
 ## Configuración de Redis con Wordpress
 
-[diagrama]: https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/diagrama.PNG "Diagrama de Arquitectura de Solución" 
-{: height="169px" width="325px"}
+[diagrama]: https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/diagrama.PNG=325x169 "Diagrama de Arquitectura de Solución" 

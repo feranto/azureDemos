@@ -15,8 +15,20 @@ Los componentes dentro de Azure que utilizaremos para esta solución son los sig
 
 # Pasos para implementarlo
 ## Creación de Wordpress dentro de Azure
+1.  Paso 1
+2.  Paso 2
 ## Creación de Cuenta de Storage
+1.  Paso 1
+2.  Paso 2
 ## Creación de Redis 
+1.  Paso 1
+2.  Paso 2
 ## Creación de CDN
+1.  Paso 1
+2.  Paso 2
 ## Configuración de CDN con Wordpress
+1.  Paso 1
+2.  Paso 2
 ## Configuración de Redis con Wordpress
+1.  Paso 1
+2.  Paso 2

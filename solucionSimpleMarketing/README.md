@@ -93,7 +93,12 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3.png" width="649" height="338" alt="Creacion Redis 1" />
 
 5.  Abrimos el Redis y buscamos las llaves de acceso
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis4.png" width="649" height="338" alt="Creacion Redis 4" />
+
 6.  Copiamos las llaves de acceso en nuestro notepad
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis5.png" width="649" height="338" alt="Creacion Redis 5" />
 
 ## Creación de CDN
 1.  Abrimos nuestro grupo de usuario y presionamos agregar

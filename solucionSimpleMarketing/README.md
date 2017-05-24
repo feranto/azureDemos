@@ -50,7 +50,7 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress8.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress8.png" width="649" height="338" alt="Creacion grupo de recursos" />
 
 
-    5.  Luego ingresamos al dashboard de wordpress con nuestro usuario y contraseña y hemos completado este paso!
+5.  Luego ingresamos al dashboard de wordpress con nuestro usuario y contraseña y hemos completado este paso!
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress9.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress9.png" width="649" height="338" alt="Creacion grupo de recursos" />
 
@@ -59,8 +59,14 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 
 ## Creación de Cuenta de Storage
-1.  Paso 1
-2.  Paso 2
+1.  En el grupo de recurso que creamos elegimos agregar
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage1" width="649" height="338" alt="Creacion Storage 1" />
+
+2.  Buscamos "Cuenta Storage"
+3.  Le ponemos un nombre y usamos los parametros por defecto
+4.  Creamos la Cuenta
+
 ## Creación de Redis 
 1.  Paso 1
 2.  Paso 2

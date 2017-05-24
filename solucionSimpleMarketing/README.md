@@ -84,9 +84,14 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis1" width="649" height="338" alt="Creacion Redis 1" />
 
-2.  Buscamos Redis y seleccionamos la opción de microsoft
-3.  Ingresamo nombre y activamos el puerto
+2.  Buscamos Redis y seleccionamos la opción de microsoft, ingresamos nombre y activamos el puerto
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis2" width="649" height="338" alt="Creacion Redis 1" />
+
 4.  Creamos la cuenta de Redis
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3" width="649" height="338" alt="Creacion Redis 1" />
+
 5.  Abrimos el Redis y buscamos las llaves de acceso
 6.  Copiamos las llaves de acceso en nuestro notepad
 ## Creación de CDN

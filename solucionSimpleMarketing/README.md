@@ -106,6 +106,8 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 4.  Creamos la cuenta y la abrimos
 
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN3.png" width="649" height="338" alt="Creacion CDN 3" />
+
 
 ## Configuración de CDN con Wordpress
 1.  Paso 1

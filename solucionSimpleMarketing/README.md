@@ -35,8 +35,8 @@ Esperamos la implementación del Wordpress
 
 En el portal de Azure abrimos el nuevo Wordpress
 
- <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress4.png" width="649" height="338" alt="Creacion grupo de recursos" />
- 
+ <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress5.png" width="649" height="338" alt="Creacion grupo de recursos" />
+
     2.  Abrimos la URL nueva
     3.  Creamos el titulo del wordpress, elegimos un nombre de usuario y contraseña. Muy importante, debemos guardar estos valores para más adelante.
     4.  Luego wordpress nos mostrará una confirmación de instalación exitosa

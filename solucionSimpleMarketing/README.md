@@ -21,3 +21,4 @@ Los componentes dentro de Azure que utilizaremos para esta solución son los sig
 ## Configuración de Redis con Wordpress
 
 [diagrama]: https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/diagrama.PNG "Diagrama de Arquitectura de Solución" 
+{: height="169px" width="325px"}

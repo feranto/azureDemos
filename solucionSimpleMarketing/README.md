@@ -5,4 +5,4 @@ El diagrama de arquitectura es el siguiente:
 
 ![alt text][logo]
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Diagrama de Arquitectura de Solución"
+[logo]: https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/diagrama.PNG "Diagrama de Arquitectura de Solución"

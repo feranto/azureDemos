@@ -100,8 +100,10 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN1.png" width="649" height="338" alt="Creacion CDN 1" />
 
-2.  Buscamos CDN y elegimos la opción de Microsoft,
-3.  Luego especificamos nombre de cdn y parametros
+2.  Buscamos CDN y elegimos la opción de Microsoft, luego especificamos nombre de cdn y parametros
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN2.png" width="649" height="338" alt="Creacion CDN 2" />
+
 4.  Creamos la cuenta y la abrimos
 
 

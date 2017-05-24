@@ -3,7 +3,7 @@ En este tutorial aprenderemos a implementar una solución de CMS Wordpress agreg
 
 El diagrama de arquitectura es el siguiente:
 
-![alt text][diagrama]
+!["Diagrama de Arquitectura de Solución" ](https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/diagrama.PNG =325x169 )
 
 Los componentes dentro de Azure que utilizaremos para esta solución son los siguientes:
 
@@ -19,5 +19,3 @@ Los componentes dentro de Azure que utilizaremos para esta solución son los sig
 ## Creación de CDN
 ## Configuración de CDN con Wordpress
 ## Configuración de Redis con Wordpress
-
-[diagrama]: https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/diagrama.PNG =325x169 "Diagrama de Arquitectura de Solución" 

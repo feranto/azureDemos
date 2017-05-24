@@ -40,9 +40,21 @@ En el portal de Azure abrimos el nuevo Wordpress
 Abrimos la URL nueva
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress6.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress6.png" width="649" height="338" alt="Creacion grupo de recursos" />
 
-    3.  Creamos el titulo del wordpress, elegimos un nombre de usuario y contraseña. Muy importante, debemos guardar estos valores para más adelante.
-    4.  Luego wordpress nos mostrará una confirmación de instalación exitosa
+Creamos el titulo del wordpress, elegimos un nombre de usuario y contraseña. Muy importante, debemos guardar estos valores para más adelante.
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress7.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress7.png" width="649" height="338" alt="Creacion grupo de recursos" />
+
+Luego wordpress nos mostrará una confirmación de instalación exitosa
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress8.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress8.png" width="649" height="338" alt="Creacion grupo de recursos" />
+
+
     5.  Luego ingresamos al dashboard de wordpress con nuestro usuario y contraseña y hemos completado este paso!
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress9.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress9.png" width="649" height="338" alt="Creacion grupo de recursos" />
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress10.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress10.png" width="649" height="338" alt="Creacion grupo de recursos" />
+
+
 ## Creación de Cuenta de Storage
 1.  Paso 1
 2.  Paso 2

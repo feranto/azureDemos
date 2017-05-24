@@ -133,8 +133,18 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp1.png" width="649" height="338" alt="configuracionWp1" />
 
 2.  Seleccionamos plugins
-3. Agregamos un nuevo plugin y buscamos "Azure"
-4. Seleccionamos e instalamos el siguiente plugin:
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp3.png" width="649" height="338" alt="configuracionWp3" />
+
+3. Agregamos un nuevo plugin y buscamos "Azure" e instalamos el siguiente plugin:
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp4.png" width="649" height="338" alt="configuracionWp4" />
+
+
+4. Una vez seleccionado preciona activar:
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/configuracionWp5.png" width="649" height="338" alt="configuracionWp5" />
+
 5. Configuramos el plugin
 
 

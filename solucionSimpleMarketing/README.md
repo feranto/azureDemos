@@ -15,7 +15,9 @@ Los componentes dentro de Azure que utilizaremos para esta solución son los sig
 # Pasos para implementarlo
 ## Creación de Wordpress dentro de Azure
 1.  Ingresamos al Portal de azure https://portal.azure.com
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/portal.PNG" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/diagrama.PNG" width="649" height="338" alt="Portal de Azure" />
 2.  Creamos un nuevo grupo de recurso
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/portal.PNG" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionGrupoRecurso.PNG" width="649" height="338" alt="Creacion grupo de recursos" />
 3.  Dentro del grupo de recurso creamos un nuevo Wordpress
     1.  Al seleccionar la base de datos seleccionamos Azure MySQL
 4.  Una vez está el deployment listo procedemos a finalizar la instalación del Wordpress

@@ -63,7 +63,10 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage1" width="649" height="338" alt="Creacion Storage 1" />
 
-2.  Buscamos "Cuenta Storage"
+2.  Buscamos "Storage Account"
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage2" width="649" height="338" alt="Creacion Storage 1" />
+
 3.  Le ponemos un nombre y usamos los parametros por defecto
 4.  Creamos la Cuenta
 

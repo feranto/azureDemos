@@ -25,17 +25,17 @@ Los componentes dentro de Azure que utilizaremos para esta solución son los sig
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress2.png" width="649" height="338" alt="Creacion grupo de recursos" />
 
 Al seleccionar la base de datos seleccionamos Azure MySQL
-    <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress3.png" width="649" height="338" alt="Creacion grupo de recursos" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress3.png" width="649" height="338" alt="Creacion grupo de recursos" />
 
 Esperamos la implementación del Wordpress
-    <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress4.png" width="649" height="338" alt="Creacion grupo de recursos" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress4.png" width="649" height="338" alt="Creacion grupo de recursos" />
 
 
 4.  Una vez está el deployment listo procedemos a finalizar la instalación del Wordpress
 
 En el portal de Azure abrimos el nuevo Wordpress
 
- <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress5.png" width="649" height="338" alt="Creacion grupo de recursos" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress5.png" width="649" height="338" alt="Creacion grupo de recursos" />
 
 Abrimos la URL nueva
 <img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress6.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionWordpress6.png" width="649" height="338" alt="Creacion grupo de recursos" />

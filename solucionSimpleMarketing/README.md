@@ -65,38 +65,46 @@ Luego wordpress nos mostrará una confirmación de instalación exitosa
 
 2.  Buscamos "Storage Account"
 
-<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage2" width="649" height="338" alt="Creacion Storage 2" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage2.png" width="649" height="338" alt="Creacion Storage 2" />
 
 3.  Le ponemos un nombre y usamos los parametros por defecto
 
-<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage3" width="649" height="338" alt="Creacion Storage 3" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage3.png" width="649" height="338" alt="Creacion Storage 3" />
 
 4.  Creamos la Cuenta y abrimos la pestaña de claves de acceso
 
-<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage4" width="649" height="338" alt="Creacion Storage 4" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage4.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage4.png" width="649" height="338" alt="Creacion Storage 4" />
 
 5. Anotamos y guardamos el nombre de la cuenta y la clave primaria
 
-<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage5" width="649" height="338" alt="Creacion Storage 5" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage5.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionStorage5.png" width="649" height="338" alt="Creacion Storage 5" />
 
 ## Creación de Redis 
 1.  Ingresamos al grupo de recurso y seleccionamos agregar
 
-<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis1" width="649" height="338" alt="Creacion Redis 1" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis1.png" width="649" height="338" alt="Creacion Redis 1" />
 
 2.  Buscamos Redis y seleccionamos la opción de microsoft, ingresamos nombre y activamos el puerto
 
-<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis2" width="649" height="338" alt="Creacion Redis 1" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis2.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis2.png" width="649" height="338" alt="Creacion Redis 1" />
 
 4.  Creamos la cuenta de Redis
 
-<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3" width="649" height="338" alt="Creacion Redis 1" />
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionRedis3.png" width="649" height="338" alt="Creacion Redis 1" />
 
 5.  Abrimos el Redis y buscamos las llaves de acceso
 6.  Copiamos las llaves de acceso en nuestro notepad
+
 ## Creación de CDN
-1.  Paso 1
-2.  Paso 2
+1.  Abrimos nuestro grupo de usuario y presionamos agregar
+
+<img src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN1.png" data-canonical-src="https://raw.githubusercontent.com/feranto/azureDemos/master/solucionSimpleMarketing/imagenes/creacionCDN1.png" width="649" height="338" alt="Creacion CDN 1" />
+
+2.  Buscamos CDN y elegimos la opción de Microsoft,
+3.  Luego especificamos nombre de cdn y parametros
+4.  Creamos la cuenta y la abrimos
+
+
 ## Configuración de CDN con Wordpress
 1.  Paso 1
 2.  Paso 2

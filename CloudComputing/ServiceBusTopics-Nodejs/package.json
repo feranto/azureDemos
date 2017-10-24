@@ -1,0 +1,20 @@
+{
+  "name": "servicebusnodejs",
+  "version": "1.0.0",
+  "description": "nodejs app to connecto to azure service bus",
+  "main": "sender.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://ferant0@ferant0.visualstudio.com:22/_git/serviceBusNodeJs"
+  },
+  "author": "feranto",
+  "license": "ISC",
+  "dependencies": {
+    "adal-node": "^0.1.22",
+    "azure": "^2.0.0-preview",
+    "azure-keyvault": "^2.0.1-preview"
+  }
+}

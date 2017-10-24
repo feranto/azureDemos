@@ -52,3 +52,7 @@ Luego Procedemos a configuar y conectar todo
 2.  Luego en las configuraciones de "backendhttpsettings" agregamos un sondeo personalizado, el que creamos en el paso anterior.
 
 3.  Finalmente agregamos nuestros nodos ubuntu server como nodos del backend del application gateway
+
+## Accedemos al aplicativo balanceado a través del dns del application gateway ##
+
+1.  Localizamos el dns o IP pública del application gateway y probamos el balanceo desde nuestro navegador

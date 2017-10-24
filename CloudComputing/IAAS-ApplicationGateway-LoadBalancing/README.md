@@ -38,6 +38,9 @@ Luego Procedemos a configuar y conectar todo
     * ```sudo npm install -g http-server```
     * arrancamos el servidor con ```http-server index.html```
 
+
+4.  Realizamos paso 1-3 para el segundo servidor, colocando "hola server2"
+
 ## Configuración de Application Gateway##
 
 1.  Primero configuramos un sondeo de estado
@@ -46,6 +49,6 @@ Luego Procedemos a configuar y conectar todo
     *   En host seleccionamos "127.0.0.1"
     *   Ruta de acceso, escribimos "/"
     
-2.  Agregamos los nodos del backend
+2.  Luego en las configuraciones de "backendhttpsettings" agregamos un sondeo personalizado, el que creamos en el paso anterior.
 
-3.  Definimos reglas de balanceamiento
+3.  Finalmente agregamos nuestros nodos ubuntu server como nodos del backend del application gateway

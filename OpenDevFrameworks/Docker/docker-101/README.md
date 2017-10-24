@@ -36,20 +36,20 @@ En este tutorial vamos a mostrarte como crear un imagen de un contenedor para un
 
 ![alt text][dockerinfo]
 
-[dockerinfo]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/dockerInfo.PNG  "Comando Docker Info"
+[dockerinfo]: imagenes/dockerInfo.PNG  "Comando Docker Info"
 
 2.  Luego debemos bajar los scripts, archivos y configuraciones para nuestro contenedor y para ello ingresamos al link de este [repositorio](https://github.com/feranto/tutoriales-docker) haciendo click en en el siguiente botón:
 
 ![alt text][gitcode]
 
-[gitcode]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/descargaCodigo.png  "Código Github"
+[gitcode]: imagenes/descargaCodigo.png  "Código Github"
 
 
 3. Luego descomprimimos la carpeta y abrimos la carpeta con Visual Studio Code y deberíamos ver lo siguiente:
 
 ![alt text][vscode]
 
-[vscode]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/vscode1.PNG  "Recursos en vscode"
+[vscode]: imagenes/vscode1.PNG  "Recursos en vscode"
 
 
 4. Ahora veremos acerca de Dockerfile. Te explicamos que significa cada comando dentro del Dockerfile:
@@ -152,11 +152,11 @@ Estos nos correrá un proceso en el cual ejecutará todos nuestro comandos, copi
 
 ![alt text][imagebuild1]
 
-[imagebuild1]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/imageBuild.png  "Construcción imagen"
+[imagebuild1]: imagenes/imageBuild.png  "Construcción imagen"
 
 ![alt text][imagebuild2]
 
-[imagebuild2]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/imageBuild2.png  "Construcción imagen"
+[imagebuild2]: imagenes/imageBuild2.png  "Construcción imagen"
 
 Ahora deberíamos poder ejecutar el siguiente comando y ver nuestra imagen alli:
 
@@ -164,7 +164,7 @@ Ahora deberíamos poder ejecutar el siguiente comando y ver nuestra imagen alli:
 
 ![alt text][imagebuild3]
 
-[imagebuild3]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/imageBuild3.png  "Construcción imagen"
+[imagebuild3]: imagenes/imageBuild3.png  "Construcción imagen"
 
 ## Corremos nuestro contenedor ##
 
@@ -174,7 +174,7 @@ Ahora deberíamos poder ejecutar el siguiente comando y ver nuestra imagen alli:
 
 ![alt text][imagerunning1]
 
-[imagerunning1]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/dockerCorriendo1.png  "Imagen Corriendo"
+[imagerunning1]: imagenes/dockerCorriendo1.png  "Imagen Corriendo"
 
 También podemos correrlo en modo "detached" es decir podemos cerrar la consola y seguirá funcionando con el parametro ``` -d ```.
 
@@ -185,7 +185,7 @@ También podemos correrlo en modo "detached" es decir podemos cerrar la consola 
 
 ![alt text][imagerunning2]
 
-[imagerunning2]: https://raw.githubusercontent.com/feranto/azureDemos/OpenDevFramework/Docker/master/docker-101/imagenes/dockerCorriendo2.png  "Imagen Corriendo"
+[imagerunning2]: imagenes/dockerCorriendo2.png  "Imagen Corriendo"
 
 
 ## Publica nuestra imagen en un registro(Dockerhub) ##

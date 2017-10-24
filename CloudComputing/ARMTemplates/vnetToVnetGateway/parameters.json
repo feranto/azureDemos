@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "disks_centosContainers_OsDisk_1_873e56b6dbdf470b80e246396099ab4a_name": {
+            "value": null
+        },
+        "virtualMachines_centosContainers_name": {
+            "value": null
+        },
+        "virtualMachines_centosclient_name": {
+            "value": null
+        },
+        "virtualMachines_centosserver_name": {
+            "value": null
+        },
+        "networkInterfaces_centoscontainers879_name": {
+            "value": null
+        },
+        "networkInterfaces_centosclient850_name": {
+            "value": null
+        },
+        "networkInterfaces_centosserver69_name": {
+            "value": null
+        },
+        "publicIPAddresses_centosContainers_ip_name": {
+            "value": null
+        },
+        "publicIPAddresses_containersVpnGateway_name": {
+            "value": null
+        },
+        "publicIPAddresses_centosclient_ip_name": {
+            "value": null
+        },
+        "publicIPAddresses_clientservervpn_name": {
+            "value": null
+        },
+        "publicIPAddresses_centosserver_ip_name": {
+            "value": null
+        },
+        "publicIPAddresses_serverVpnGateway_name": {
+            "value": null
+        },
+        "virtualNetworks_containervnet_name": {
+            "value": null
+        },
+        "virtualNetworks_client_name": {
+            "value": null
+        },
+        "virtualNetworks_paperlessvnet_name": {
+            "value": null
+        },
+        "virtualNetworks_servervnet_name": {
+            "value": null
+        },
+        "storageAccounts_pocvnetgatewaydisks114_name": {
+            "value": null
+        },
+        "storageAccounts_pocvnetgatewaydisks644_name": {
+            "value": null
+        }
+    }
+}

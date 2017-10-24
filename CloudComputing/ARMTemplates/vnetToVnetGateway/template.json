@@ -1,0 +1,638 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "disks_centosContainers_OsDisk_1_873e56b6dbdf470b80e246396099ab4a_name": {
+            "defaultValue": "centosContainers_OsDisk_1_873e56b6dbdf470b80e246396099ab4a",
+            "type": "String"
+        },
+        "virtualMachines_centosContainers_name": {
+            "defaultValue": "centosContainers",
+            "type": "String"
+        },
+        "virtualMachines_centosclient_name": {
+            "defaultValue": "centosclient",
+            "type": "String"
+        },
+        "virtualMachines_centosserver_name": {
+            "defaultValue": "centosserver",
+            "type": "String"
+        },
+        "networkInterfaces_centoscontainers879_name": {
+            "defaultValue": "centoscontainers879",
+            "type": "String"
+        },
+        "networkInterfaces_centosclient850_name": {
+            "defaultValue": "centosclient850",
+            "type": "String"
+        },
+        "networkInterfaces_centosserver69_name": {
+            "defaultValue": "centosserver69",
+            "type": "String"
+        },
+        "publicIPAddresses_centosContainers_ip_name": {
+            "defaultValue": "centosContainers-ip",
+            "type": "String"
+        },
+        "publicIPAddresses_containersVpnGateway_name": {
+            "defaultValue": "containersVpnGateway",
+            "type": "String"
+        },
+        "publicIPAddresses_centosclient_ip_name": {
+            "defaultValue": "centosclient-ip",
+            "type": "String"
+        },
+        "publicIPAddresses_clientservervpn_name": {
+            "defaultValue": "clientservervpn",
+            "type": "String"
+        },
+        "publicIPAddresses_centosserver_ip_name": {
+            "defaultValue": "centosserver-ip",
+            "type": "String"
+        },
+        "publicIPAddresses_serverVpnGateway_name": {
+            "defaultValue": "serverVpnGateway",
+            "type": "String"
+        },
+        "virtualNetworks_containervnet_name": {
+            "defaultValue": "containervnet",
+            "type": "String"
+        },
+        "virtualNetworks_client_name": {
+            "defaultValue": "client",
+            "type": "String"
+        },
+        "virtualNetworks_paperlessvnet_name": {
+            "defaultValue": "paperlessvnet",
+            "type": "String"
+        },
+        "virtualNetworks_servervnet_name": {
+            "defaultValue": "servervnet",
+            "type": "String"
+        },
+        "storageAccounts_pocvnetgatewaydisks114_name": {
+            "defaultValue": "pocvnetgatewaydisks114",
+            "type": "String"
+        },
+        "storageAccounts_pocvnetgatewaydisks644_name": {
+            "defaultValue": "pocvnetgatewaydisks644",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Compute/disks/centosContainers_OsDisk_1_873e56b6dbdf470b80e246396099ab4a'.",
+            "type": "Microsoft.Compute/disks",
+            "name": "[parameters('disks_centosContainers_OsDisk_1_873e56b6dbdf470b80e246396099ab4a_name')]",
+            "apiVersion": "2016-04-30-preview",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "accountType": "Standard_LRS",
+                "osType": "Linux",
+                "creationData": {
+                    "createOption": "FromImage",
+                    "imageReference": {
+                        "id": "/Subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/Providers/Microsoft.Compute/Locations/eastus/Publishers/cloudera/ArtifactTypes/VMImage/Offers/cloudera-centos-os/Skus/7_2/Versions/latest"
+                    }
+                },
+                "diskSizeGB": 50
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Compute/virtualMachines/centosContainers'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_centosContainers_name')]",
+            "apiVersion": "2016-04-30-preview",
+            "location": "eastus",
+            "plan": {
+                "name": "7_2",
+                "product": "cloudera-centos-os",
+                "publisher": "cloudera"
+            },
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "cloudera",
+                        "offer": "cloudera-centos-os",
+                        "sku": "7_2",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_centosContainers_name'),'_OsDisk_1_873e56b6dbdf470b80e246396099ab4a')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[resourceId('Microsoft.Compute/disks', parameters('disks_centosContainers_OsDisk_1_873e56b6dbdf470b80e246396099ab4a_name'))]"
+                        },
+                        "diskSizeGB": 50
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_centosContainers_name')]",
+                    "adminUsername": "feranto",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/feranto/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCh91PPAaL7n1q7mkTEEQelnlFcCWQXJsuTo7IaocASYJlJI0M60uAVf5g40add+opGkPtHLZUU1s29Et8ad1WnOoD5VfuIVkD78K+/FdcYvFtruxcpI7NncfUWSRDqxuivZEwsPIfbYcEjmqmvwzb7rsUcZ4TzG9THb9pQY8gAemQiaA1t8QHbZazDA4KkXu1zVuFxhQw4XB6AwvPobZGXScim4NnvCAiYVVOD9P8d8x1S/7GfZnQXCGWtyiO0mqTekbB508xdozfvcyEyeC+08GGX4UUvt+owMRfl9K7JJ/k27EZB86TVNOQgTeRGBtm94eeZsQz14iCd5wxs7ewExmLFmoLrAkKadGjdE5MMsU+jf9zOo6cEyqvvdQQboE08p9fXiNU+D6323VRdgKU3Nmbr6hf5GlLTDEPgu0246jMKSo0k5XcHhOcBZPy2LmLDQBk9AmWc/VdeHew69Zbg7ImQNkmaP/oejuGsdpO5E8sz2i3g12J6f97qwsctnaOnwjnMW768/z5OcvLFwew+CB8kBWatOJUqiBJO6AwEJS1EFyqgEYSZBbaAI9/2gWQc9Jh/qOAYUvFWgwgbOcjkaBw8zQeENaQgzKZoMo+KCJzbL/6RH31/PEZzYEQ3fXtjx4mAGmWHU7FTiBGn7OrTmnvNa5ITk6DEANAK0PC+EQ=="
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_centoscontainers879_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/disks', parameters('disks_centosContainers_OsDisk_1_873e56b6dbdf470b80e246396099ab4a_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_centoscontainers879_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Compute/virtualMachines/centosclient'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_centosclient_name')]",
+            "apiVersion": "2016-04-30-preview",
+            "location": "southcentralus",
+            "plan": {
+                "name": "7_2",
+                "product": "cloudera-centos-os",
+                "publisher": "cloudera"
+            },
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS2_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "cloudera",
+                        "offer": "cloudera-centos-os",
+                        "sku": "7_2",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[parameters('virtualMachines_centosclient_name')]",
+                        "createOption": "FromImage",
+                        "vhd": {
+                            "uri": "[concat('https', '://', parameters('storageAccounts_pocvnetgatewaydisks644_name'), '.blob.core.windows.net', concat('/vhds/', parameters('virtualMachines_centosclient_name'),'20170628154800.vhd'))]"
+                        },
+                        "caching": "ReadWrite"
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_centosclient_name')]",
+                    "adminUsername": "feranto",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/feranto/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCh91PPAaL7n1q7mkTEEQelnlFcCWQXJsuTo7IaocASYJlJI0M60uAVf5g40add+opGkPtHLZUU1s29Et8ad1WnOoD5VfuIVkD78K+/FdcYvFtruxcpI7NncfUWSRDqxuivZEwsPIfbYcEjmqmvwzb7rsUcZ4TzG9THb9pQY8gAemQiaA1t8QHbZazDA4KkXu1zVuFxhQw4XB6AwvPobZGXScim4NnvCAiYVVOD9P8d8x1S/7GfZnQXCGWtyiO0mqTekbB508xdozfvcyEyeC+08GGX4UUvt+owMRfl9K7JJ/k27EZB86TVNOQgTeRGBtm94eeZsQz14iCd5wxs7ewExmLFmoLrAkKadGjdE5MMsU+jf9zOo6cEyqvvdQQboE08p9fXiNU+D6323VRdgKU3Nmbr6hf5GlLTDEPgu0246jMKSo0k5XcHhOcBZPy2LmLDQBk9AmWc/VdeHew69Zbg7ImQNkmaP/oejuGsdpO5E8sz2i3g12J6f97qwsctnaOnwjnMW768/z5OcvLFwew+CB8kBWatOJUqiBJO6AwEJS1EFyqgEYSZBbaAI9/2gWQc9Jh/qOAYUvFWgwgbOcjkaBw8zQeENaQgzKZoMo+KCJzbL/6RH31/PEZzYEQ3fXtjx4mAGmWHU7FTiBGn7OrTmnvNa5ITk6DEANAK0PC+EQ=="
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_centosclient850_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_pocvnetgatewaydisks644_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_centosclient850_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Compute/virtualMachines/centosserver'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_centosserver_name')]",
+            "apiVersion": "2016-04-30-preview",
+            "location": "westus2",
+            "plan": {
+                "name": "7_2",
+                "product": "cloudera-centos-os",
+                "publisher": "cloudera"
+            },
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS2_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "cloudera",
+                        "offer": "cloudera-centos-os",
+                        "sku": "7_2",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[parameters('virtualMachines_centosserver_name')]",
+                        "createOption": "FromImage",
+                        "vhd": {
+                            "uri": "[concat('https', '://', parameters('storageAccounts_pocvnetgatewaydisks114_name'), '.blob.core.windows.net', concat('/vhds/', parameters('virtualMachines_centosserver_name'),'20170628153209.vhd'))]"
+                        },
+                        "caching": "ReadWrite"
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_centosserver_name')]",
+                    "adminUsername": "feranto",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/feranto/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCh91PPAaL7n1q7mkTEEQelnlFcCWQXJsuTo7IaocASYJlJI0M60uAVf5g40add+opGkPtHLZUU1s29Et8ad1WnOoD5VfuIVkD78K+/FdcYvFtruxcpI7NncfUWSRDqxuivZEwsPIfbYcEjmqmvwzb7rsUcZ4TzG9THb9pQY8gAemQiaA1t8QHbZazDA4KkXu1zVuFxhQw4XB6AwvPobZGXScim4NnvCAiYVVOD9P8d8x1S/7GfZnQXCGWtyiO0mqTekbB508xdozfvcyEyeC+08GGX4UUvt+owMRfl9K7JJ/k27EZB86TVNOQgTeRGBtm94eeZsQz14iCd5wxs7ewExmLFmoLrAkKadGjdE5MMsU+jf9zOo6cEyqvvdQQboE08p9fXiNU+D6323VRdgKU3Nmbr6hf5GlLTDEPgu0246jMKSo0k5XcHhOcBZPy2LmLDQBk9AmWc/VdeHew69Zbg7ImQNkmaP/oejuGsdpO5E8sz2i3g12J6f97qwsctnaOnwjnMW768/z5OcvLFwew+CB8kBWatOJUqiBJO6AwEJS1EFyqgEYSZBbaAI9/2gWQc9Jh/qOAYUvFWgwgbOcjkaBw8zQeENaQgzKZoMo+KCJzbL/6RH31/PEZzYEQ3fXtjx4mAGmWHU7FTiBGn7OrTmnvNa5ITk6DEANAK0PC+EQ=="
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_centosserver69_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_pocvnetgatewaydisks114_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_centosserver69_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/networkInterfaces/centoscontainers879'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_centoscontainers879_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAddress": "12.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_centosContainers_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_containervnet_name')), '/subnets/containers')]"
+                            }
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableIPForwarding": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_centosContainers_ip_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_containervnet_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/networkInterfaces/centosclient850'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_centosclient850_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAddress": "15.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_centosclient_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_client_name')), '/subnets/centosclient')]"
+                            }
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableIPForwarding": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_centosclient_ip_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_client_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/networkInterfaces/centosserver69'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_centosserver69_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "westus2",
+            "scale": null,
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAddress": "14.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_centosserver_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_servervnet_name')), '/subnets/serversubnet')]"
+                            }
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableIPForwarding": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_centosserver_ip_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_servervnet_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/publicIPAddresses/centosContainers-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_centosContainers_ip_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "pocvpncentos1"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/publicIPAddresses/containersVpnGateway'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_containersVpnGateway_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/publicIPAddresses/centosclient-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_centosclient_ip_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "pocvpncentos3"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/publicIPAddresses/clientservervpn'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_clientservervpn_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/publicIPAddresses/centosserver-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_centosserver_ip_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "westus2",
+            "scale": null,
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "pocvpncentos2"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/publicIPAddresses/serverVpnGateway'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_serverVpnGateway_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "westus2",
+            "scale": null,
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/virtualNetworks/containervnet'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_containervnet_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "12.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "containers",
+                        "properties": {
+                            "addressPrefix": "12.0.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "GatewaySubnet",
+                        "properties": {
+                            "addressPrefix": "12.0.1.0/24"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/virtualNetworks/client'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_client_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "15.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[concat('centos', parameters('virtualNetworks_client_name'))]",
+                        "properties": {
+                            "addressPrefix": "15.0.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "GatewaySubnet",
+                        "properties": {
+                            "addressPrefix": "15.0.1.0/24"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/virtualNetworks/paperlessvnet'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_paperlessvnet_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "centralus",
+            "scale": null,
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "13.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "paperlesssubnet",
+                        "properties": {
+                            "addressPrefix": "13.0.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "GatewaySubnet",
+                        "properties": {
+                            "addressPrefix": "13.0.1.0/24"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocVnetGateway/providers/Microsoft.Network/virtualNetworks/servervnet'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_servervnet_name')]",
+            "apiVersion": "2017-03-01",
+            "location": "westus2",
+            "scale": null,
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "14.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "serversubnet",
+                        "properties": {
+                            "addressPrefix": "14.0.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "GatewaySubnet",
+                        "properties": {
+                            "addressPrefix": "14.0.1.0/24"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocvnetgateway/providers/Microsoft.Storage/storageAccounts/pocvnetgatewaydisks114'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Premium_LRS",
+                "tier": "Premium"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_pocvnetgatewaydisks114_name')]",
+            "apiVersion": "2016-01-01",
+            "location": "westus2",
+            "tags": {},
+            "scale": null,
+            "properties": {},
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/pocvnetgateway/providers/Microsoft.Storage/storageAccounts/pocvnetgatewaydisks644'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Premium_LRS",
+                "tier": "Premium"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_pocvnetgatewaydisks644_name')]",
+            "apiVersion": "2016-01-01",
+            "location": "southcentralus",
+            "tags": {},
+            "scale": null,
+            "properties": {},
+            "dependsOn": []
+        }
+    ]
+}

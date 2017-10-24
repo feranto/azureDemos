@@ -21,4 +21,6 @@ Luego Procedemos a configuar y conectar todo
 ## Configuración de App service#
 1.  Escogemos la version de java
 2.  Escogemos el contenedor tomcat
-3.  Ahora procedemos a subir nuestro war 
+3.  Ahora procedemos a subir nuestro war en \home\site\wwwroot\webapps.
+
+link: https://docs.microsoft.com/en-us/azure/app-service/web-sites-java-add-app

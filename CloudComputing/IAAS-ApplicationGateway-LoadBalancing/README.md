@@ -37,3 +37,15 @@ Luego Procedemos a configuar y conectar todo
 3.  Instalamos un servidor http
     * ```sudo npm install -g http-server```
     * arrancamos el servidor con ```http-server index.html```
+
+## Configuración de Application Gateway##
+
+1.  Primero configuramos un sondeo de estado
+    *   Le definimos un nombre
+    *   Protocolo escogemos http
+    *   En host seleccionamos "127.0.0.1"
+    *   Ruta de acceso, escribimos "/"
+    
+2.  Agregamos los nodos del backend
+
+3.  Definimos reglas de balanceamiento

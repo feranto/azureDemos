@@ -1,0 +1,11 @@
+<h1>
+  {{title}}
+</h1>
+
+<ul>
+  <li *ngFor="let contact of contacts" >
+    <span class="badge">{{contact.id}}</span>
+    <span>{{contact.name}}</span>    
+  </li>
+</ul>
+

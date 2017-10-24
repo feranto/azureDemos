@@ -1,0 +1,531 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworks_vnet_name": {
+            "defaultValue": "vnet",
+            "type": "String"
+        },
+        "virtualMachines_http1_name": {
+            "defaultValue": "http1",
+            "type": "String"
+        },
+        "virtualMachines_http2_name": {
+            "defaultValue": "http2",
+            "type": "String"
+        },
+        "publicIPAddresses_gateway_name": {
+            "defaultValue": "gateway",
+            "type": "String"
+        },
+        "networkInterfaces_http1475_name": {
+            "defaultValue": "http1475",
+            "type": "String"
+        },
+        "networkInterfaces_http2487_name": {
+            "defaultValue": "http2487",
+            "type": "String"
+        },
+        "publicIPAddresses_http1_ip_name": {
+            "defaultValue": "http1-ip",
+            "type": "String"
+        },
+        "publicIPAddresses_http2_ip_name": {
+            "defaultValue": "http2-ip",
+            "type": "String"
+        },
+        "applicationGateways_gateway_name": {
+            "defaultValue": "gateway",
+            "type": "String"
+        },
+        "subnets_http_name": {
+            "defaultValue": "http",
+            "type": "String"
+        },
+        "subnets_appgateway_name": {
+            "defaultValue": "appgateway",
+            "type": "String"
+        },
+        "virtualMachines_http1_id": {
+            "defaultValue": "/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Compute/disks/http1_OsDisk_1_c6f98a69b30d4528bf5c2920e42fefb3",
+            "type": "String"
+        },
+        "virtualMachines_http2_id": {
+            "defaultValue": "/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Compute/disks/http2_OsDisk_1_3e892616eb184cd2bb68ab3fd0c22c9e",
+            "type": "String"
+        },
+        "applicationGateways_gateway_id": {
+            "defaultValue": "/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/applicationGateways/gateway/frontendIPConfigurations/appGatewayFrontendIP",
+            "type": "String"
+        },
+        "applicationGateways_gateway_id_1": {
+            "defaultValue": "/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/applicationGateways/gateway/frontendPorts/appGatewayFrontendPort",
+            "type": "String"
+        },
+        "applicationGateways_gateway_id_2": {
+            "defaultValue": "/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/applicationGateways/gateway/httpListeners/appGatewayHttpListener",
+            "type": "String"
+        },
+        "applicationGateways_gateway_id_3": {
+            "defaultValue": "/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/applicationGateways/gateway/backendAddressPools/appGatewayBackendPool",
+            "type": "String"
+        },
+        "applicationGateways_gateway_id_4": {
+            "defaultValue": "/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/applicationGateways/gateway/backendHttpSettingsCollection/appGatewayBackendHttpSettings",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Compute/virtualMachines/http1'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_http1_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A1"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_http1_name'),'_OsDisk_1_c6f98a69b30d4528bf5c2920e42fefb3')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_http1_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_http1_name')]",
+                    "adminUsername": "feranto",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/feranto/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCh91PPAaL7n1q7mkTEEQelnlFcCWQXJsuTo7IaocASYJlJI0M60uAVf5g40add+opGkPtHLZUU1s29Et8ad1WnOoD5VfuIVkD78K+/FdcYvFtruxcpI7NncfUWSRDqxuivZEwsPIfbYcEjmqmvwzb7rsUcZ4TzG9THb9pQY8gAemQiaA1t8QHbZazDA4KkXu1zVuFxhQw4XB6AwvPobZGXScim4NnvCAiYVVOD9P8d8x1S/7GfZnQXCGWtyiO0mqTekbB508xdozfvcyEyeC+08GGX4UUvt+owMRfl9K7JJ/k27EZB86TVNOQgTeRGBtm94eeZsQz14iCd5wxs7ewExmLFmoLrAkKadGjdE5MMsU+jf9zOo6cEyqvvdQQboE08p9fXiNU+D6323VRdgKU3Nmbr6hf5GlLTDEPgu0246jMKSo0k5XcHhOcBZPy2LmLDQBk9AmWc/VdeHew69Zbg7ImQNkmaP/oejuGsdpO5E8sz2i3g12J6f97qwsctnaOnwjnMW768/z5OcvLFwew+CB8kBWatOJUqiBJO6AwEJS1EFyqgEYSZBbaAI9/2gWQc9Jh/qOAYUvFWgwgbOcjkaBw8zQeENaQgzKZoMo+KCJzbL/6RH31/PEZzYEQ3fXtjx4mAGmWHU7FTiBGn7OrTmnvNa5ITk6DEANAK0PC+EQ=="
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_http1475_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_http1475_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Compute/virtualMachines/http2'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_http2_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A1"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "16.04-LTS",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_http2_name'),'_OsDisk_1_3e892616eb184cd2bb68ab3fd0c22c9e')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_http2_id')]"
+                        },
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_http2_name')]",
+                    "adminUsername": "feranto",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/feranto/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCh91PPAaL7n1q7mkTEEQelnlFcCWQXJsuTo7IaocASYJlJI0M60uAVf5g40add+opGkPtHLZUU1s29Et8ad1WnOoD5VfuIVkD78K+/FdcYvFtruxcpI7NncfUWSRDqxuivZEwsPIfbYcEjmqmvwzb7rsUcZ4TzG9THb9pQY8gAemQiaA1t8QHbZazDA4KkXu1zVuFxhQw4XB6AwvPobZGXScim4NnvCAiYVVOD9P8d8x1S/7GfZnQXCGWtyiO0mqTekbB508xdozfvcyEyeC+08GGX4UUvt+owMRfl9K7JJ/k27EZB86TVNOQgTeRGBtm94eeZsQz14iCd5wxs7ewExmLFmoLrAkKadGjdE5MMsU+jf9zOo6cEyqvvdQQboE08p9fXiNU+D6323VRdgKU3Nmbr6hf5GlLTDEPgu0246jMKSo0k5XcHhOcBZPy2LmLDQBk9AmWc/VdeHew69Zbg7ImQNkmaP/oejuGsdpO5E8sz2i3g12J6f97qwsctnaOnwjnMW768/z5OcvLFwew+CB8kBWatOJUqiBJO6AwEJS1EFyqgEYSZBbaAI9/2gWQc9Jh/qOAYUvFWgwgbOcjkaBw8zQeENaQgzKZoMo+KCJzbL/6RH31/PEZzYEQ3fXtjx4mAGmWHU7FTiBGn7OrTmnvNa5ITk6DEANAK0PC+EQ=="
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_http2487_name'))]"
+                        }
+                    ]
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_http2487_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/applicationGateways/gateway'.",
+            "type": "Microsoft.Network/applicationGateways",
+            "name": "[parameters('applicationGateways_gateway_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Updating",
+                "resourceGuid": "7287b06a-c9fe-408f-8b55-7e4e8d1116f7",
+                "sku": {
+                    "name": "Standard_Medium",
+                    "tier": "Standard",
+                    "capacity": 2
+                },
+                "gatewayIPConfigurations": [
+                    {
+                        "name": "[concat('appGatewayIpConfig')]",
+                        "etag": "W/\"1f69e578-2cdc-43de-a261-b65a6d0f9ffd\"",
+                        "properties": {
+                            "provisioningState": "Updating",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_name'), parameters('subnets_appgateway_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "sslCertificates": [],
+                "authenticationCertificates": [],
+                "frontendIPConfigurations": [
+                    {
+                        "name": "[concat('appGatewayFrontendIP')]",
+                        "etag": "W/\"1f69e578-2cdc-43de-a261-b65a6d0f9ffd\"",
+                        "properties": {
+                            "provisioningState": "Updating",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_gateway_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "frontendPorts": [
+                    {
+                        "name": "[concat('appGatewayFrontendPort')]",
+                        "etag": "W/\"1f69e578-2cdc-43de-a261-b65a6d0f9ffd\"",
+                        "properties": {
+                            "provisioningState": "Updating",
+                            "port": 80
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "[concat('appGatewayBackendPool')]",
+                        "etag": "W/\"1f69e578-2cdc-43de-a261-b65a6d0f9ffd\"",
+                        "properties": {
+                            "provisioningState": "Updating",
+                            "backendAddresses": []
+                        }
+                    }
+                ],
+                "backendHttpSettingsCollection": [
+                    {
+                        "name": "[concat('appGatewayBackendHttpSettings')]",
+                        "etag": "W/\"1f69e578-2cdc-43de-a261-b65a6d0f9ffd\"",
+                        "properties": {
+                            "provisioningState": "Updating",
+                            "port": 80,
+                            "protocol": "Http",
+                            "cookieBasedAffinity": "Disabled",
+                            "pickHostNameFromBackendAddress": false,
+                            "requestTimeout": 30
+                        }
+                    }
+                ],
+                "httpListeners": [
+                    {
+                        "name": "[concat('appGatewayHttpListener')]",
+                        "etag": "W/\"1f69e578-2cdc-43de-a261-b65a6d0f9ffd\"",
+                        "properties": {
+                            "provisioningState": "Updating",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('applicationGateways_gateway_id')]"
+                            },
+                            "frontendPort": {
+                                "id": "[parameters('applicationGateways_gateway_id_1')]"
+                            },
+                            "protocol": "Http",
+                            "requireServerNameIndication": false
+                        }
+                    }
+                ],
+                "urlPathMaps": [],
+                "requestRoutingRules": [
+                    {
+                        "name": "rule1",
+                        "etag": "W/\"1f69e578-2cdc-43de-a261-b65a6d0f9ffd\"",
+                        "properties": {
+                            "provisioningState": "Updating",
+                            "ruleType": "Basic",
+                            "httpListener": {
+                                "id": "[parameters('applicationGateways_gateway_id_2')]"
+                            },
+                            "backendAddressPool": {
+                                "id": "[parameters('applicationGateways_gateway_id_3')]"
+                            },
+                            "backendHttpSettings": {
+                                "id": "[parameters('applicationGateways_gateway_id_4')]"
+                            }
+                        }
+                    }
+                ],
+                "probes": [],
+                "redirectConfigurations": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_name'), parameters('subnets_appgateway_name'))]",
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_gateway_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/networkInterfaces/http1475'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_http1475_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "f98bb2ce-908b-42b6-bd37-fbfba91a6de7",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"5c8d90e0-2eaf-4f09-87fc-713d82b5c9fe\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.1.1.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_http1_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_name'), parameters('subnets_http_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "x4nmk5foem4uxhhtl3cuy2fvwa.bx.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-10-5E-73",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_http1_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_http1_ip_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_name'), parameters('subnets_http_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_http1_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/networkInterfaces/http2487'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_http2487_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "5a14bfa8-04a6-4701-a6c2-3aad7d45d1d9",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"5bf981c3-3a5e-437c-b146-21664ee09d2f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.1.1.5",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_http2_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_name'), parameters('subnets_http_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "x4nmk5foem4uxhhtl3cuy2fvwa.bx.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-10-D9-73",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_http2_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_http2_ip_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_name'), parameters('subnets_http_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_http2_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/publicIPAddresses/gateway'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_gateway_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "12abc740-9c68-473f-a1ea-e9080dc78b3b",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/publicIPAddresses/http1-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_http1_ip_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "e8dd1a2f-5d76-4c66-8441-ed7c9ba873fd",
+                "ipAddress": "52.168.151.104",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/publicIPAddresses/http2-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[parameters('publicIPAddresses_http2_ip_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "952f7124-6482-40b2-b67a-3d98ea62de08",
+                "ipAddress": "52.168.148.127",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/virtualNetworks/vnet'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_vnet_name')]",
+            "apiVersion": "2017-06-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "7cc59abf-23ae-4b3d-9cf3-5f454c70b5b0",
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.1.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "appgateway",
+                        "etag": "W/\"21627ebf-f096-4b04-9151-666838c2b768\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.1.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "http",
+                        "etag": "W/\"21627ebf-f096-4b04-9151-666838c2b768\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.1.1.0/24"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/virtualNetworks/vnet/subnets/appgateway'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_vnet_name'), '/', parameters('subnets_appgateway_name'))]",
+            "apiVersion": "2017-06-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.1.0.0/24"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_name'))]"
+            ]
+        },
+        {
+            "comments": "Se ha generalizado a partir del recurso '/subscriptions/059826b1-0e86-47f0-b433-1d55bdfb3b3a/resourceGroups/ossday-iaas/providers/Microsoft.Network/virtualNetworks/vnet/subnets/http'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_vnet_name'), '/', parameters('subnets_http_name'))]",
+            "apiVersion": "2017-06-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.1.1.0/24"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_name'))]"
+            ]
+        }
+    ]
+}

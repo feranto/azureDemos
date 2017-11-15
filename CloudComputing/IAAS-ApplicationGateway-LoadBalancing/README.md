@@ -25,6 +25,7 @@ Luego Procedemos a configuar y conectar todo
     *   ```vim index.html```
     *   presionamos la tecla "a"
     *   En el servidor 1 agregamos el texto "hola server 1"
+    *   Presionamos la tecla esc
     *   presionamos ":" , luego grabamos con los caracteres "wq" y presionamos Enter
 
 2.  Instalamos nodejs en cada uno con los siguientes comandos:

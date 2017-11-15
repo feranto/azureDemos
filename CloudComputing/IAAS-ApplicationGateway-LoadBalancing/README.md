@@ -21,8 +21,8 @@ Luego Procedemos a configuar y conectar todo
 ## Configuración de Servidores Ubuntu##
 
 1.  creamos un archivo html 
-    *   touch index.html
-    *   vim index.html
+    *   ```touch index.html```
+    *   ```vim index.html```
     *   presionamos la tecla "a"
     *   En el servidor 1 agregamos el texto "hola server 1"
     *   presionamos ":" , luego grabamos con los caracteres "wq" y presionamos Enter
@@ -36,7 +36,8 @@ Luego Procedemos a configuar y conectar todo
 
 3.  Instalamos un servidor http
     * ```sudo npm install -g http-server```
-    * arrancamos el servidor con ```http-server index.html```
+    * nos posicionamos donde se encuentre el archivo index.html
+    * arrancamos el servidor con ```sudo http-server -p 80 ```
 
 
 4.  Realizamos paso 1-3 para el segundo servidor, colocando "hola server2"

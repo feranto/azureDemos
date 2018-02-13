@@ -1,6 +1,16 @@
 ##variable declaration
+<#
+Tag name	                Tag value
+---------                   ----------
+ApplicationOwner	        The name of the person who manages this application
+CostCenter                  The cost center of the group that is paying for the Azure consumption
+BusinessUnit                the business unit associated with the subscription
+EnvironmentType             Production (Even though the subscription includes Production in the name, including this tag enables easy identification when looking at resources in the portal or on the bill)
+
+#>
+
 $resourceGroupName = "demoResourceGroup"
-$tagsHashTable = @{ Dept="IT"; Environment="Test" }
+$tagsHashTable = @{ ApplicationOwner="John Doe"; CostCenter="HR" ; BusinessUnit="IT" ; EnvironmentType="dev" }
 
 ## To add tags to a resource group without existing tags
 Set-AzureRmResourceGroup -Name $resourceGroupName -Tag $tagsHashTable

@@ -1,5 +1,5 @@
 ##variable declaration
-$resourceGroupName = "demoResourceGroup"
+$resourceGroupName = "bot-feria-adessa"
 $tagsHashTable = @{ Dept="IT"; Environment="Test" }
 
 ## To add tags to a resource group without existing tags

@@ -207,6 +207,11 @@ Ahora podemos navegar a <http://localhost:8080>
 
 #### Desplegamos nuestra aplicación al cluster
 
+1.  Primero clonamos nuestro repositorio:
+    ```
+    git clone https://github.com/Azure/blackbelt-aks-hackfest.git
+    ```
+
 1.  Agregamos el registro de nuestras imagenes a un archivo YAML
 
     ```

@@ -19,7 +19,9 @@ Guia para empezar con practicas Devops en Kubernetes con AKS.
 Names:
 
 globaldevops-aks-node-1
+globaldevopsaksnode1
 globaldevops-aks-netcore-1
+globaldevopsaksnetcore1
 
 ## Demos 
 
@@ -69,6 +71,21 @@ globaldevops-aks-netcore-1
 1.  Ahora podemos navegar a <http://localhost:8080>
 
 ### App en contendores en vm 
+
+#### Base de Datos
+
+
+#### Api
+
+#### Front End
+
+1.  Creamos la imagen docker del frontend
+
+    ```
+    cd ~/blackbelt-aks-hackfest/app/web
+    
+    docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` --build-arg IMAGE_TAG_REF=v1 -t rating-web .
+    ```
 
 ### App en cluster kubernetes 
 

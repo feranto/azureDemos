@@ -29,6 +29,8 @@ globaldevops-aks-netcore-1
 
 ```bash ssh vm-docker-hackfest ```
 
+
+#### Base de Datos
 2. Verificamos que mongodb este corriendo
 
 ```bash service mongodb status ```
@@ -40,13 +42,23 @@ globaldevops-aks-netcore-1
 
     mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray
     ```
-1.  Corremos la api node
+
+
+#### API
+4.  Corremos la api node
 
     ```bash
     cd ~/blackbelt-aks-hackfest/app/api
 
-    npm install && npm run localmachine
+    npm install && npm run localmachine &
     ```
+
+5.  Ahora podemos navegar a <http://localhost:3000/api/heroes>
+
+
+#### Front End
+
+6.  
 
 ### App en contendores en vm 
 

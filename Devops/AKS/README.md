@@ -88,13 +88,13 @@ docker network create --subnet=172.18.0.0/16 my-network
     ```
 2.  Corremos el contendor
 
-```
+    ```
     docker run -d --name db --net my-network --ip 172.18.0.10 -p 27017:27017 rating-db
     ```
 
 3. Validamos que este activo `docker ps -a`
 
-1. Importamos data a la bbdd
+4. Importamos data a la bbdd
 
     ```
     docker exec -it db bash
@@ -112,7 +112,7 @@ docker network create --subnet=172.18.0.0/16 my-network
     2018-01-10T19:26:07.761+0000	imported 2 documents
     ```
 
-1. Escribimos `exit` para salir del contenedor
+5. Escribimos `exit` para salir del contenedor
 
 #### Api
 

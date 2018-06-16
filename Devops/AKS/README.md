@@ -229,7 +229,21 @@ Y reemplazamos la variable ```<login server>``` por el servidor de nuestro regis
 
     vi heroes-web-api.yaml
     ```
+3.  Accedemos a nuestro cluster de kubernetes
 
+```
+    az aks get-credentials -n $CLUSTER_NAME -g $NAME
+    ```
+3.  Agregamos un secreto en kubernetes, las credenciales del registro
+
+```
+# set these values to yours
+ACR_SERVER=
+ACR_USER=
+ACR_PWD=
+
+kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --docker-username=$ACR_USER --docker-password=$ACR_PWD --docker-email=superman@heroes.com
+```
 
 
 

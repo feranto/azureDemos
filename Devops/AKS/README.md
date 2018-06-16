@@ -154,6 +154,27 @@ docker network create --subnet=173.18.0.0/16 my-network
     docker run -d --name web -e "API=http://173.18.0.11:3000/" --net my-network --ip 173.18.0.12 -p 8080:8080 rating-web
     ```
 
+Ahora podemos navegar a <http://localhost:8080>
+
 ### App en cluster kubernetes 
+
+1.  Guardamos las imagenes en un registro
+
+        ```bash
+        ACR_SERVER=
+        ACR_USER=
+        ACR_PWD=
+
+        docker login --username $ACR_USER --password $ACR_PWD $ACR_SERVER
+
+
+        docker tag rating-db $ACR_SERVER/azureworkshop/rating-db:v1
+        docker tag rating-api $ACR_SERVER/azureworkshop/rating-api:v1
+        docker tag rating-web $ACR_SERVER/azureworkshop/rating-web:v1
+
+        docker push $ACR_SERVER/azureworkshop/rating-db:v1
+        docker push $ACR_SERVER/azureworkshop/rating-api:v1
+        docker push $ACR_SERVER/azureworkshop/rating-web:v1
+        ```
 
 ### CI/CD App en cluster kubernetes 

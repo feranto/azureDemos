@@ -126,7 +126,7 @@ docker network create --subnet=173.18.0.0/16 my-network
 
 2.  Corremos el contenedor
 
-```
+    ```
     docker run -d --name api -e "MONGODB_URI=mongodb://172.18.0.10:27017/webratings" --net my-network --ip 172.18.0.11 -p 3000:3000 rating-api
     ```
 

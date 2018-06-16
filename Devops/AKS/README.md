@@ -14,7 +14,11 @@ Guia para empezar con practicas Devops en Kubernetes con AKS.
 *	Si no tienes suscripción de Azure, Activar [Visual Studio Dev Essentials](https://www.visualstudio.com/es/dev-essentials/)
 *	Activar suscripción de 25 USD mensuales de Azure durante 12 meses
 
-# Tutoriales Paso a Paso(Comenzar Haciendo Estos)
+# Slides Presentación
+
+*   [Slides Kubernetes en Azure](https://github.com/Azure/blackbelt-aks-hackfest/tree/master/slides)
+
+# Tutoriales Paso a Paso
 
 *  [Comenzando con Contenedores y Kubernetes](https://github.com/Azure/blackbelt-aks-hackfest/tree/master/labs/day1-labs
 )

@@ -72,6 +72,11 @@ globaldevopsaksnetcore1
 
 ### App en contendores en vm 
 
+Primero creamos una red de docker para comiunicar los contenedores:
+```
+docker network create --subnet=172.18.0.0/16 my-network
+```
+
 #### Base de Datos
 
 1.  Creamos la imagen docker de la bbdd

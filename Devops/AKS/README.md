@@ -195,5 +195,14 @@ Ahora podemos navegar a <http://localhost:8080>
     az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.7.7 --generate-ssh-keys -l $LOCATION
     ```
 
+5.  Obtenemos las credenciales
+    ```
+    az aks get-credentials -n $CLUSTER_NAME -g $NAME
+    ```
+
+6.  Vemos los nodos de nuestro cluster
+    ```
+    kubectl get nodes
+    ```
 ### CI/CD App en cluster kubernetes 
 

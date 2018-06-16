@@ -25,13 +25,13 @@ globaldevops-aks-netcore-1
 
 ### App nativa en vm 
 
-Primero nos conectamos a nuestra vm
+1. Primero nos conectamos a nuestra vm
 ``` ssh vm-docker-hackfest ```
 
-Verificamos que mongodb este corriendo
+2. Verificamos que mongodb este corriendo
 ``` service mongodb status ```
 
-Cargamos nuestras colecciones
+3. Cargamos nuestras colecciones
 
     ```bash
     cd ~/blackbelt-aks-hackfest/app/db

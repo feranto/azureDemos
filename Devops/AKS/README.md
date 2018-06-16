@@ -12,7 +12,7 @@ Guia para empezar con practicas Devops en Kubernetes con AKS.
 
 # Tutoriales Paso a Paso
 
-* Comenzando con Contenedores y Kubernetes [Hackfest](https://github.com/Azure/blackbelt-aks-hackfest/tree/master/labs/day1-labs
+*  [Comenzando con Contenedores y Kubernetes](https://github.com/Azure/blackbelt-aks-hackfest/tree/master/labs/day1-labs
 )
 * [CI/CD con Aks y Vsts ](https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/)
 
@@ -21,7 +21,9 @@ Names:
 globaldevops-aks-node-1
 globaldevops-aks-netcore-1
 
-## DEMO #1 , App nativa en vm 
+## Demos 
+
+###App nativa en vm 
 
 
 ssh vm-docker-hackfest
@@ -33,11 +35,8 @@ service mongodb status
 
 
 
+### App en contendores en vm 
 
+### App en cluster kubernetes 
 
-
- ## DEMO #2 , App en contendores en vm 
-
- ## DEMO #3 , App en cluster kubernetes 
-
- ## DEMO #4 , CI/CD App en cluster kubernetes 
+### CI/CD App en cluster kubernetes 

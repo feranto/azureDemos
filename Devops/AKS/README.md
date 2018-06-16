@@ -204,5 +204,29 @@ Ahora podemos navegar a <http://localhost:8080>
     ```
     kubectl get nodes
     ```
+
+#### Desplegamos nuestra aplicación al cluster
+
+1.  Agregamos el registro de nuestras imagenes a un archivo YAML
+
+    ```
+    cd ~/blackbelt-aks-hackfest/labs/helper-files
+
+    vi heroes-db.yaml
+    ```
+
+Y reemplazamos la variable ```<login server>``` por el servidor de nuestro registro.
+
+2. Reemplazamos la variable tambien en el siguiente archivo YAML:
+
+    ```
+    cd ~/blackbelt-aks-hackfest/labs/helper-files
+
+    vi heroes-web-api.yaml
+    ```
+
+
+
+
 ### CI/CD App en cluster kubernetes 
 

@@ -74,7 +74,7 @@ globaldevopsaksnetcore1
 
 Primero creamos una red de docker para comiunicar los contenedores:
 ```
-docker network create --subnet=172.18.0.0/16 my-network
+docker network create --subnet=173.18.0.0/16 my-network
 ```
 
 #### Base de Datos
@@ -89,7 +89,7 @@ docker network create --subnet=172.18.0.0/16 my-network
 2.  Corremos el contendor
 
     ```
-    docker run -d --name db --net my-network --ip 172.18.0.10 -p 27017:27017 rating-db
+    docker run -d --name db --net my-network --ip 173.18.0.10 -p 27017:27017 rating-db
     ```
 
 3. Validamos que este activo `docker ps -a`

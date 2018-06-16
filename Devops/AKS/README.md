@@ -4,24 +4,22 @@ Guia para empezar con practicas Devops en Kubernetes con AKS.
 
 # Pre-requisitos
 
+* Ver este genial Video:
+
+[![IMAGE ALT TEXT HERE](imagenes/deis.png)](https://youtu.be/4ht22ReBjno)
+
 *	Instalar [git](https://git-scm.com/downloads)
 *	Instalar [nodejs](https://nodejs.org/es/download/)
 *	Instalar [Visual Studio Code](https://code.visualstudio.com/download)
 *	Si no tienes suscripción de Azure, Activar [Visual Studio Dev Essentials](https://www.visualstudio.com/es/dev-essentials/)
 *	Activar suscripción de 25 USD mensuales de Azure durante 12 meses
 
-# Tutoriales Paso a Paso
+# Tutoriales Paso a Paso(Comenzar Haciendo Estos)
 
 *  [Comenzando con Contenedores y Kubernetes](https://github.com/Azure/blackbelt-aks-hackfest/tree/master/labs/day1-labs
 )
 * [CI/CD con Aks y Vsts ](https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/)
 
-Names:
-
-globaldevops-aks-node-1
-globaldevopsaksnode1
-globaldevops-aks-netcore-1
-globaldevopsaksnetcore1
 
 ## Demos 
 

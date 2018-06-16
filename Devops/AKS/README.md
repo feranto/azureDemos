@@ -80,7 +80,7 @@ Primero eliminamos y detenemos todos los contenedores:
         docker rm $( docker ps -a -q)
 ```
 
-Primero creamos una red de docker para comiunicar los contenedores:
+Luego creamos una red de docker para comiunicar los contenedores:
 ```
 docker network create --subnet=173.18.0.0/16 my-network
 ```
@@ -238,6 +238,7 @@ Y reemplazamos la variable ```<login server>``` por el servidor de nuestro regis
 
 ```
 # set these values to yours
+```
 ACR_SERVER=
 ACR_USER=
 ACR_PWD=

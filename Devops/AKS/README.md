@@ -86,7 +86,33 @@ docker network create --subnet=172.18.0.0/16 my-network
 
     docker build -t rating-db .
     ```
+2.  Corremos el contendor
 
+```
+    docker run -d --name db --net my-network --ip 172.18.0.10 -p 27017:27017 rating-db
+    ```
+
+3. Validamos que este activo `docker ps -a`
+
+1. Importamos data a la bbdd
+
+    ```
+    docker exec -it db bash
+    ```
+
+    You will have a prompt inside the mongo container. From that prompt, run the import script (`./import.sh`)
+
+    ```
+    root@61f9894538d0:/# ./import.sh
+    2018-01-10T19:26:07.746+0000	connected to: localhost
+    2018-01-10T19:26:07.761+0000	imported 4 documents
+    2018-01-10T19:26:07.776+0000	connected to: localhost
+    2018-01-10T19:26:07.787+0000	imported 72 documents
+    2018-01-10T19:26:07.746+0000	connected to: localhost
+    2018-01-10T19:26:07.761+0000	imported 2 documents
+    ```
+
+1. Escribimos `exit` para salir del contenedor
 
 #### Api
 

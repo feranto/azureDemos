@@ -25,7 +25,7 @@ Guia para empezar con practicas Devops en Kubernetes con AKS.
 * [CI/CD con Aks y Vsts ](https://almvm.azurewebsites.net/labs/vstsextend/kubernetes/)
 
 
-## Demos 
+## Guia Demos(no tiene todos los comandos, solo de referencia)
 
 ### App nativa en vm 
 

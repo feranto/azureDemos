@@ -74,6 +74,8 @@ globaldevopsaksnetcore1
 
 #### Base de Datos
 
+1.  Creamos la imagen docker de la bbdd
+
     ```
     cd ~/blackbelt-aks-hackfest/app/db
 

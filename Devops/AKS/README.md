@@ -319,6 +319,3 @@ kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --d
 
 12. Navegamos a la IP publica para ver la app funcionando
 
-
-### CI/CD App en cluster kubernetes 
-

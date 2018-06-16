@@ -74,6 +74,12 @@ globaldevopsaksnetcore1
 
 #### Base de Datos
 
+    ```
+    cd ~/blackbelt-aks-hackfest/app/db
+
+    docker build -t rating-db .
+    ```
+
 
 #### Api
 

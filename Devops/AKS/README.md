@@ -77,6 +77,14 @@ globaldevopsaksnetcore1
 
 #### Api
 
+1.  Creamos la imagen docker de la api
+
+    ```
+    cd ~/blackbelt-aks-hackfest/app/api
+
+    docker build -t rating-api .
+    ```
+
 #### Front End
 
 1.  Creamos la imagen docker del frontend

@@ -231,7 +231,7 @@ Y reemplazamos la variable ```<login server>``` por el servidor de nuestro regis
     ```
 3.  Accedemos a nuestro cluster de kubernetes
 
-```
+    ```
     az aks get-credentials -n $CLUSTER_NAME -g $NAME
     ```
 4.  Agregamos un secreto en kubernetes, las credenciales del registro

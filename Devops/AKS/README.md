@@ -40,7 +40,7 @@ globaldevops-aks-netcore-1
 
     mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray
     ```
-4.  Corremos la api node
+1.  Corremos la api node
 
     ```bash
     cd ~/blackbelt-aks-hackfest/app/api

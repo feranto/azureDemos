@@ -6,7 +6,7 @@ Guia para empezar con practicas Devops en Kubernetes con AKS.
 
 * Ver este genial Video(Guia Ilustrada de Kubernetes para niños):
 
-[![IMAGE ALT TEXT HERE](imagenes/deis.png)](https://youtu.be/4ht22ReBjno)
+[![Guia Ilustrada de Kubernetes para niños](imagenes/deis.png)](https://youtu.be/4ht22ReBjno)
 
 *	Instalar [git](https://git-scm.com/downloads)
 *	Instalar [nodejs](https://nodejs.org/es/download/)

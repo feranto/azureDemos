@@ -60,7 +60,7 @@ globaldevops-aks-netcore-1
 
 1.  Ahora corremos el frontend 
 
-```bash
+    ```bash
     cd ~/blackbelt-aks-hackfest/app/web
 
     npm install && npm run localmachine

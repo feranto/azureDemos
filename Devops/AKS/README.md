@@ -158,6 +158,7 @@ Ahora podemos navegar a <http://localhost:8080>
 
 ### App en cluster kubernetes 
 
+#### Guardamos las imagenes en un registro
 1.  Guardamos las imagenes en un registro
 
         ```bash
@@ -177,7 +178,7 @@ Ahora podemos navegar a <http://localhost:8080>
         docker push $ACR_SERVER/azureworkshop/rating-web:v1
         ```
 
-### CI/CD App en cluster kubernetes 
+#### Creamos un cluster de kubernetes y desplegamos
 
 1.  Ingresamos a <https://shell.azure.com>
 2.  Escogemos la terminal bash
@@ -192,3 +193,6 @@ Ahora podemos navegar a <http://localhost:8080>
     ```
     az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.7.7 --generate-ssh-keys -l $LOCATION
     ```
+
+### CI/CD App en cluster kubernetes 
+

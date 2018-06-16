@@ -246,6 +246,76 @@ ACR_PWD=
 kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --docker-username=$ACR_USER --docker-password=$ACR_PWD --docker-email=superman@heroes.com
 ```
 
+5.  Finalmente desplegamos nuestros archivos YAML
+
+6.  Usamos kubectl CLI para desplegar cada app
+    ```
+    cd ~/blackbelt-aks-hackfest/labs/helper-files
+
+    kubectl apply -f heroes-db.yaml
+    ```
+
+7. Obtenemos el pod de mongo
+    ```
+    kubectl get pods
+
+    NAME                                 READY     STATUS    RESTARTS   AGE
+    heroes-db-deploy-2357291595-k7wjk    1/1       Running   0          3m
+
+    MONGO_POD=heroes-db-deploy-2357291595-k7wjk
+    ```
+
+8. Importamos la data en MongoDB
+    ```
+    # ensure the pod name variable is set to your pod name
+    # once you exec into pod, run the `import.sh` script
+
+    kubectl exec -it $MONGO_POD bash
+
+    root@heroes-db-deploy-2357291595-xb4xm:/# ./import.sh
+    2018-01-16T21:38:44.819+0000	connected to: localhost
+    2018-01-16T21:38:44.918+0000	imported 4 documents
+    2018-01-16T21:38:44.927+0000	connected to: localhost
+    2018-01-16T21:38:45.031+0000	imported 72 documents
+    2018-01-16T21:38:45.040+0000	connected to: localhost
+    2018-01-16T21:38:45.152+0000	imported 2 documents
+    root@heroes-db-deploy-2357291595-xb4xm:/# exit
+
+    # be sure to exit pod as shown above
+    ```
+
+
+9.  Desplegamos cada app con kubectl CLI
+
+    ```
+    cd ~/blackbelt-aks-hackfest/labs/helper-files
+
+    kubectl apply -f heroes-web-api.yaml
+    ```
+
+10. Validatamos
+
+    ```
+    kubectl get pods
+
+    NAME                                 READY     STATUS    RESTARTS   AGE
+    heroes-api-deploy-1140957751-2z16s   1/1       Running   0          2m
+    heroes-db-deploy-2357291595-k7wjk    1/1       Running   0          3m
+    heroes-web-1645635641-pfzf9          1/1       Running   0          2m
+    ```
+
+11. Chequeamos para ver los servicios desplegados
+    ```
+    kubectl get service
+
+    NAME         TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE
+    api          LoadBalancer   10.0.20.156   52.176.104.50    3000:31416/TCP   5m
+    kubernetes   ClusterIP      10.0.0.1      <none>           443/TCP          12m
+    mongodb      ClusterIP      10.0.5.133    <none>           27017/TCP        5m
+    web          LoadBalancer   10.0.54.206   52.165.235.114   8080:32404/TCP   5m
+    ```
+
+12. Navegamos a la IP publica para ver la app funcionando
 
 
 ### CI/CD App en cluster kubernetes 

@@ -178,3 +178,12 @@ Ahora podemos navegar a <http://localhost:8080>
         ```
 
 ### CI/CD App en cluster kubernetes 
+
+1.  Ingresamos a <https://shell.azure.com>
+2.  Escogemos la terminal bash
+3.  Definimos algunas variables:
+    ```
+        NAME=globaldevops-aks-node-2
+        LOCATION=eastus
+        CLUSTER_NAME="${NAME//_}"
+    ```

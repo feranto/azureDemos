@@ -148,6 +148,12 @@ docker network create --subnet=173.18.0.0/16 my-network
     docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` --build-arg IMAGE_TAG_REF=v1 -t rating-web .
     ```
 
+2.  Corremos el contenedor
+
+    ```
+    docker run -d --name web -e "API=http://173.18.0.11:3000/" --net my-network --ip 173.18.0.12 -p 8080:8080 rating-web
+    ```
+
 ### App en cluster kubernetes 
 
 ### CI/CD App en cluster kubernetes 

@@ -58,7 +58,15 @@ globaldevops-aks-netcore-1
 
 #### Front End
 
-6.  
+1.  Ahora corremos el frontend 
+
+```bash
+    cd ~/blackbelt-aks-hackfest/app/web
+
+    npm install && npm run localmachine
+    ```
+
+1.  Ahora podemos navegar a <http://localhost:8080>
 
 ### App en contendores en vm 
 

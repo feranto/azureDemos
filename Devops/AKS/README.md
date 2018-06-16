@@ -187,3 +187,8 @@ Ahora podemos navegar a <http://localhost:8080>
         LOCATION=eastus
         CLUSTER_NAME="${NAME//_}"
     ```
+
+4.  Creamos un cluster de kubernetes:
+    ```
+    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.7.7 --generate-ssh-keys -l $LOCATION
+    ```

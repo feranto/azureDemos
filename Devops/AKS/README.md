@@ -124,6 +124,12 @@ docker network create --subnet=173.18.0.0/16 my-network
     docker build -t rating-api .
     ```
 
+2.  Corremos el contenedor
+
+```
+    docker run -d --name api -e "MONGODB_URI=mongodb://172.18.0.10:27017/webratings" --net my-network --ip 172.18.0.11 -p 3000:3000 rating-api
+    ```
+
 #### Front End
 
 1.  Creamos la imagen docker del frontend

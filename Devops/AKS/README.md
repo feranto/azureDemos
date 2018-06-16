@@ -76,7 +76,6 @@ globaldevopsaksnetcore1
 
     ```
      cd ~/blackbelt-aks-hackfest/app/db
-
     docker build -t rating-db .
     ```
 
@@ -87,7 +86,6 @@ globaldevopsaksnetcore1
 
     ```
     cd ~/blackbelt-aks-hackfest/app/api
-
     docker build -t rating-api .
     ```
 

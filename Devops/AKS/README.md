@@ -4,7 +4,7 @@ Guia para empezar con practicas Devops en Kubernetes con AKS.
 
 # Pre-requisitos
 
-* Ver este genial Video:
+* Ver este genial Video(Guia Ilustrada de Kubernetes para niños):
 
 [![IMAGE ALT TEXT HERE](imagenes/deis.png)](https://youtu.be/4ht22ReBjno)
 

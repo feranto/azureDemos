@@ -26,9 +26,11 @@ globaldevops-aks-netcore-1
 ### App nativa en vm 
 
 1. Primero nos conectamos a nuestra vm
+
 ```bash ssh vm-docker-hackfest ```
 
 2. Verificamos que mongodb este corriendo
+
 ```bash service mongodb status ```
 
 3. Cargamos nuestras colecciones
@@ -38,8 +40,13 @@ globaldevops-aks-netcore-1
 
     mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray
     ```
+4.  Corremos la api node
 
+    ```bash
+    cd ~/blackbelt-aks-hackfest/app/api
 
+    npm install && npm run localmachine
+    ```
 
 ### App en contendores en vm 
 

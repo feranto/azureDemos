@@ -33,9 +33,11 @@ Verificamos que mongodb este corriendo
 
 Cargamos nuestras colecciones
 
-``` cd ~/blackbelt-aks-hackfest/app/db 
+    ```bash
+    cd ~/blackbelt-aks-hackfest/app/db
 
-mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray ```
+    mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray
+    ```
 
 
 

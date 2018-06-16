@@ -72,6 +72,14 @@ globaldevopsaksnetcore1
 
 ### App en contendores en vm 
 
+Primero eliminamos y detenemos todos los contenedores:
+
+```
+    Deteniendo Contenedores
+        docker stop $( docker ps -a -q)
+        docker rm $( docker ps -a -q)
+```
+
 Primero creamos una red de docker para comiunicar los contenedores:
 ```
 docker network create --subnet=173.18.0.0/16 my-network

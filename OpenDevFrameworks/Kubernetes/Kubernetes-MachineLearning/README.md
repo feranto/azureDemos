@@ -12,6 +12,8 @@
 *	Si no tienes suscripción de Azure, Activar [Visual Studio Dev Essentials](https://www.visualstudio.com/es/dev-essentials/)
 *	Activar suscripción de 25 USD mensuales de Azure durante 12 meses
 
+Este workshop esta basado en el blog post de [Dockerizing R and Python Web Services](https://blogs.msdn.microsoft.com/mlserver/2018/07/26/dockerizing-r-and-python-web-services/).
+
 
 ## Creación de Imagenes Docker ##
 ### Creación de vm Linux ###

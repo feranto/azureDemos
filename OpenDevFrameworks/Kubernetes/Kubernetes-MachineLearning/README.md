@@ -379,57 +379,14 @@ ACR_PWD=
 kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --docker-username=$ACR_USER --docker-password=$ACR_PWD --docker-email=superman@heroes.com
 ```
 
-> Note: You can review the `heroes-db.yaml` and `heroes-web-api.yaml` to see where the `imagePullSecrets` are configured.
+> Note: You can review the `pymanualtransmissionyaml` ato see where the `imagePullSecrets` are configured.
 
-## Deploy database container to AKS
-
-* Use the kubectl CLI to deploy each app
-    ```
-    cd ~/blackbelt-aks-hackfest/labs/helper-files
-
-    kubectl apply -f heroes-db.yaml
-    ```
-
-* Get mongodb pod name
-    ```
-    kubectl get pods
-
-    NAME                                 READY     STATUS    RESTARTS   AGE
-    heroes-db-deploy-2357291595-k7wjk    1/1       Running   0          3m
-
-    MONGO_POD=heroes-db-deploy-2357291595-k7wjk
-    ```
-
-* Import data into MongoDB using script
-    ```
-    # ensure the pod name variable is set to your pod name
-    # once you exec into pod, run the `import.sh` script
-
-    kubectl exec -it $MONGO_POD bash
-
-    root@heroes-db-deploy-2357291595-xb4xm:/# ./import.sh
-    2018-01-16T21:38:44.819+0000	connected to: localhost
-    2018-01-16T21:38:44.918+0000	imported 4 documents
-    2018-01-16T21:38:44.927+0000	connected to: localhost
-    2018-01-16T21:38:45.031+0000	imported 72 documents
-    2018-01-16T21:38:45.040+0000	connected to: localhost
-    2018-01-16T21:38:45.152+0000	imported 2 documents
-    root@heroes-db-deploy-2357291595-xb4xm:/# exit
-
-    # be sure to exit pod as shown above
-    ```
-
-## Deploy the web and api containers to AKS
+## Desplegamos el webservice en el cluster de kubernetes
 
 * Use the kubectl CLI to deploy each app
-
     ```
-    cd ~/blackbelt-aks-hackfest/labs/helper-files
-
-    kubectl apply -f heroes-web-api.yaml
+    kubectl apply -f pymanualtransmission.yaml
     ```
-
-## Validate
 
 * Check to see if pods are running in your cluster
     ```

@@ -37,9 +37,47 @@ az vm create --resource-group $RG_NAME \
 ```
 *   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh
 ```bash 
-ssh <PUBLIC_IP_ADDRESS>
+PUBLIC_IP_ADDRESS=<PUBLIC_IP_ADDRESS>
+```
+```bash 
+ssh $PUBLIC_IP_ADDRESS
 ```
 ### Instalación Docker ###
+####   Instalando Docker CE en ubuntu
+*   Actualización de indices de paquetes apt
+```bash 
+sudo apt-get update
+```
+*   Instalacion de paquete más reciente
+```bash 
+sudo apt-get install docker-ce
+```
+*   Verificación de que docker esta funcionando
+```bash 
+sudo docker run hello-world
+```
+
+#### Administrar docker como usuario no-root
+*   Creación grupo docker
+```bash 
+sudo groupadd docker
+```
+*   Agregamos nuestro usuario al grupo
+```bash 
+sudo usermod -aG docker $USER
+```
+*   Hacemos log out y volvemos a loguearnos
+```bash 
+exit
+```
+```bash 
+ssh <PUBLIC_IP_ADDRESS>
+```
+
+*   Verificamos que podamos correr docker sin usuario root
+```bash 
+docker run hello-world
+```
 
 ### Dockerfiles ###
 

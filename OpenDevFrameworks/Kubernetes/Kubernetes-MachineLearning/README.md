@@ -232,9 +232,8 @@ v1: digest: sha256:f84eba148dfe244f8f8ad0d4ea57ebf82b6ff41f27a903cbb7e3fbe377bb2
 1. Return to the Azure Portal in your browser and validate that the images appear in your Container Registry under the "Repositories" area.
 2. Under tags, you will see "v1" listed.
 
-# Despliegue de Imagenes en AKS 
 
-### Creación de Cluster AKS ###
+# Creación de Cluster AKS 
 
 1. Login to Azure Portal at http://portal.azure.com. 
 2. Open the Azure Cloud Shell

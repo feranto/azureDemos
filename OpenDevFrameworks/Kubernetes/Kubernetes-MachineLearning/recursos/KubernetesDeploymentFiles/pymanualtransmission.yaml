@@ -8,8 +8,8 @@ spec:
   type: LoadBalancer
   ports:
   - name: http
-    port: 3000
-    targetPort: 3000
+    port: 12800
+    targetPort: 12800
   selector:
     name: python-webservice-machinelearning
 ---

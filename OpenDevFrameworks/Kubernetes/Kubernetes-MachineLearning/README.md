@@ -21,11 +21,24 @@
 ```bash 
     RG_NAME=MlDockerTutorial  
     VM_NAME=MlUbuntuVm
+    REGION=eastus
 ```
 *   Luego procedemos a crear un grupo de recursos
+```bash 
+az group create --name $RG_NAME --location $REGION
+```
 *   Una vez creado el grupo de recurso, creamos una vm ubuntu
+```bash 
+az vm create --resource-group $RG_NAME \
+  --name $VM_NAME \
+  --image UbuntuLTS \
+  --generate-ssh-keys \
+  --verbose
+```
 *   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh
-*   
+```bash 
+ssh <PUBLIC_IP_ADDRESS>
+```
 ### Instalación Docker ###
 
 ### Dockerfiles ###

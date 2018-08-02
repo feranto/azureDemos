@@ -103,11 +103,54 @@ ssh <PUBLIC_IP_ADDRESS>
 docker run hello-world
 ```
 
+*   [Comandos Básicos Docker](https://github.com/feranto/azureDemos/tree/master/OpenDevFrameworks/Docker/docker-101#comandos-básicos-de-docker)
+
 ### Dockerfiles ###
 
-### Imagenes ###
+*   [Como se estructura un Dockerfile](https://github.com/feranto/azureDemos/tree/master/OpenDevFrameworks/Docker/docker-101#definiendo-nuestro-contenedor-con-dockerfile)
 
-### Ejecución Local ###
+
+### Imágenes ###
+
+### Ejecución en vm ###
+
+*   Primero descargamos el dockerfile ya creado a nuestra vm con el siguiente comando
+```bash 
+curl https://gist.githubusercontent.com/ramnov/a43998f73d9254fafec45e0eb8d10c36/raw/9f99d9d719f3a52818d3339519069ede5876b441/py-manualtransmission-dockerfile > Dockerfile
+```
+*   Ejecutamos el siguiente comando para crear la imagen
+  ```bash 
+docker build -f py-manualtransmission-dockerfile -t pymanualtransmission .
+```
+*   Verificamos que la imagen este en nuestro entorno local
+```bash 
+docker images
+```
+*   Ejecutamos la imagen localmente
+```bash 
+docker run --name pymanualtransmission-container -dit pymanualtransmission
+```
+*   Verificamos el status del contenedor
+```bash 
+docker logs pymanualtransmission-container
+```
+*   Obtenemos la dirección ip interna del contenedor
+```bash 
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pymanualtransmission-container
+'172.17.0.3'
+```
+*   Ejecutamos los siguientes comandos para obtener el archivo swagger
+```bash 
+apt-get -y install jq
+
+curl -s --header "Content-Type: application/json" --request POST --data '{"username":"admin","password":"Microsoft@2018"}' http://172.17.0.3:12800/login | jq -r '.access_token'
+<access token>
+
+curl -s --header "Content-Type: application/json" --header "Authorization: Bearer <access token>" --request POST --data '{"hp":120,"wt":2.8}' http://172.17.0.3:12800/api/ManualTransmissionService/1.0.0 
+{"success":true,"errorMessage":"","outputParameters":{"answer":0.64181252840938208},"outputFiles":{},"consoleOutput":"","changedFiles":[]}
+
+curl -s --header "Authorization: Bearer <access token>" --request GET http://172.17.0.3:12800/api/ManualTransmissionService/1.0.0/swagger.json -o swagger.json
+```
 
 ### Guardando las imagenes en un registro ###
 

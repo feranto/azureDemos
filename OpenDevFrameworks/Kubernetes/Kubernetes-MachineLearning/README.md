@@ -116,7 +116,7 @@ docker run hello-world
 
 *   Primero descargamos el dockerfile ya creado a nuestra vm con el siguiente comando
 ```bash 
-curl https://gist.githubusercontent.com/ramnov/a43998f73d9254fafec45e0eb8d10c36/raw/9f99d9d719f3a52818d3339519069ede5876b441/py-manualtransmission-dockerfile > Dockerfile
+curl https://gist.githubusercontent.com/ramnov/a43998f73d9254fafec45e0eb8d10c36/raw/9f99d9d719f3a52818d3339519069ede5876b441/py-manualtransmission-dockerfile > py-manualtransmission-dockerfile 
 ```
 *   Ejecutamos el siguiente comando para crear la imagen
   ```bash 

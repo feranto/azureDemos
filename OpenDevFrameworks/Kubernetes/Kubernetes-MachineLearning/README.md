@@ -43,6 +43,30 @@ PUBLIC_IP_ADDRESS=<YOUR_PUBLIC_IP_ADDRESS>
 ssh $PUBLIC_IP_ADDRESS
 ```
 ### Instalación Docker ###
+#### Configuración repositorio Docker
+*   Actualización de indices de paquetes apt
+```bash 
+sudo apt-get update
+```
+*   instalacion de paquetes apt 
+```bash 
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+```
+*   agregamos la llave oficial GPG de docker
+```bash 
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+*   seteamos el repositorio estable de docker
+```bash 
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+```
 ####   Instalando Docker CE en ubuntu
 *   Actualización de indices de paquetes apt
 ```bash 

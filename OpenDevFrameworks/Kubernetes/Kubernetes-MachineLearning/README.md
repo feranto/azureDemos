@@ -137,8 +137,7 @@ docker logs pymanualtransmission-container
 ```
 *   Obtenemos la dirección ip interna del contenedor
 ```bash 
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pymanualtransmission-container
-'172.17.0.3'
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pymanualtransmission-container 
 ```
 *   Ejecutamos los siguientes comandos para obtener el archivo swagger
 ```bash 

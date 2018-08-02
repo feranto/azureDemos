@@ -146,7 +146,6 @@ sudo apt-get -y install jq
 
 ```bash 
 curl -s --header "Content-Type: application/json" --request POST --data '{"username":"admin","password":"Microsoft@2018"}' http://172.17.0.2:12800/login | jq -r '.access_token'
-<access token>
 ```
 
 

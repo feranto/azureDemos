@@ -346,11 +346,10 @@ You should now have a Kubernetes cluster running with 2 nodes. You do not see th
     curl https://raw.githubusercontent.com/feranto/azureDemos/master/OpenDevFrameworks/Kubernetes/Kubernetes-MachineLearning/recursos/KubernetesDeploymentFiles/pymanualtransmission.yaml -o pymanualtransmission.yaml
     ```
 
-2. In Azure Cloud Shell edit `heroes-web-api.yaml` using `vi`
+2. In Azure Cloud Shell edit `pymanualtransmission.yaml.yaml` using `vi`
     ```
-    cd ~/blackbelt-aks-hackfest/labs/helper-files
 
-    vi heroes-web-api.yaml
+    vi pymanualtransmission.yaml
     ```
     * Review the yaml file and learn about some of the settings. Note the environment variables that allow the services to connect
     * Update the yaml file for the proper container image names.
@@ -360,10 +359,11 @@ You should now have a Kubernetes cluster running with 2 nodes. You do not see th
     * Example: 
 
         ```
-        spec:
         containers:
-        - image: mycontainerregistry.azurecr.io/azureworkshop/rating-web:v1
-            name:  heroes-web-cntnr
+        - image: <login server>/azureworkshop/pymanualtransmission:v1
+          name:  pymanualtransmission-cntnr
+          resources:
+            requests:
         ```
 
 ## Setup AKS with access to Azure Container Registry

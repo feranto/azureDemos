@@ -33,6 +33,7 @@ az vm create --resource-group $RG_NAME \
   --name $VM_NAME \
   --image UbuntuLTS \
   --generate-ssh-keys \
+  --size Standard_DS3 \
   --verbose
 ```
 *   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh

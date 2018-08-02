@@ -230,7 +230,7 @@ v1: digest: sha256:f84eba148dfe244f8f8ad0d4ea57ebf82b6ff41f27a903cbb7e3fbe377bb2
 
 ### Creación de Cluster AKS ###
 
-1. Login to Azure Portal at http://portal.azure.com. Your Azure login ID will look something like `odl_user_9294@gbbossteamoutlook.onmicrosoft.com`
+1. Login to Azure Portal at http://portal.azure.com. 
 2. Open the Azure Cloud Shell
 
     ![Azure Cloud Shell](imagenes/cloudshell.png "Azure Cloud Shell")

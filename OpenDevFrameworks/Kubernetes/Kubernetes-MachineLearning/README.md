@@ -1,16 +1,19 @@
 # Orquestando webservice de machine learning en python con Kubernetes
 
-## Pre-requisitos##
+## Pre-requisitos ##
 
-*	Instalar [git](https://git-scm.com/download/win) para windows
+* Ver este genial Video(Guia Ilustrada de Kubernetes para niños):
+
+[![Guia Ilustrada de Kubernetes para niños](imagenes/deis.png)](https://youtu.be/4ht22ReBjno)
+
+*	Instalar [git](https://git-scm.com/downloads)
+*	Instalar [nodejs](https://nodejs.org/es/download/)
 *	Instalar [Visual Studio Code](https://code.visualstudio.com/download)
-    *	[Extensión Docker para VScode](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker) 
-*  Instalar [Docker](https://store.docker.com/editions/community/docker-ce-desktop-windows) para Windows.
-    *   Requiere Windows 10 professional o Enterprise de 64 bits.
-    *   El instalador de Docker activará HyperV y pedirá un reinicio
+*	Si no tienes suscripción de Azure, Activar [Visual Studio Dev Essentials](https://www.visualstudio.com/es/dev-essentials/)
+*	Activar suscripción de 25 USD mensuales de Azure durante 12 meses
 
 
-## Creación de Imagenes ##
+## Creación de Imagenes Docker##
 ### Creación de vm Linux ###
 
 ### Instalación Docker ###

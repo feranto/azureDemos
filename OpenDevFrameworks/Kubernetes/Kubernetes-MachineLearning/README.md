@@ -141,13 +141,21 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' pym
 ```
 *   Ejecutamos los siguientes comandos para obtener el archivo swagger
 ```bash 
-apt-get -y install jq
+sudo apt-get -y install jq
+```
 
+```bash 
 curl -s --header "Content-Type: application/json" --request POST --data '{"username":"admin","password":"Microsoft@2018"}' http://172.17.0.3:12800/login | jq -r '.access_token'
 <access token>
+```
 
+
+```bash 
 curl -s --header "Content-Type: application/json" --header "Authorization: Bearer <access token>" --request POST --data '{"hp":120,"wt":2.8}' http://172.17.0.3:12800/api/ManualTransmissionService/1.0.0 
 {"success":true,"errorMessage":"","outputParameters":{"answer":0.64181252840938208},"outputFiles":{},"consoleOutput":"","changedFiles":[]}
+```
+
+```bash 
 
 curl -s --header "Authorization: Bearer <access token>" --request GET http://172.17.0.3:12800/api/ManualTransmissionService/1.0.0/swagger.json -o swagger.json
 ```

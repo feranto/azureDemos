@@ -1,4 +1,4 @@
-# Orquestando webservice de machine learning en python con Kubernetes
+# Orquestando webservices de machine learning en python con Kubernetes
 
 ## Pre-requisitos ##
 
@@ -16,6 +16,15 @@
 ## Creación de Imagenes Docker##
 ### Creación de vm Linux ###
 
+*   Primero accedemos a la [consola web de azure](http://shell.azure.com/)
+*   Luego procedemos a definir algunas variables que usaremos
+    *  ```bash RG_NAME=MlDockerTutorial \ 
+               VM_NAME=MlUbuntuVm
+        ```
+*   Luego procedemos a crear un grupo de recursos
+*   Una vez creado el grupo de recurso, creamos una vm ubuntu
+*   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh
+*   
 ### Instalación Docker ###
 
 ### Dockerfiles ###

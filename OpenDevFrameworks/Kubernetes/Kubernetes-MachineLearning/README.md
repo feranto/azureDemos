@@ -18,8 +18,9 @@
 
 *   Primero accedemos a la [consola web de azure](http://shell.azure.com/)
 *   Luego procedemos a definir algunas variables que usaremos
-    *  ```bash RG_NAME=MlDockerTutorial \ 
-               VM_NAME=MlUbuntuVm
+    *  ```bash 
+                RG_NAME=MlDockerTutorial  
+                VM_NAME=MlUbuntuVm
         ```
 *   Luego procedemos a crear un grupo de recursos
 *   Una vez creado el grupo de recurso, creamos una vm ubuntu

@@ -233,7 +233,7 @@ v1: digest: sha256:f84eba148dfe244f8f8ad0d4ea57ebf82b6ff41f27a903cbb7e3fbe377bb2
 1. Login to Azure Portal at http://portal.azure.com. Your Azure login ID will look something like `odl_user_9294@gbbossteamoutlook.onmicrosoft.com`
 2. Open the Azure Cloud Shell
 
-    ![Azure Cloud Shell](img/cloudshell.png "Azure Cloud Shell")
+    ![Azure Cloud Shell](imagenes/cloudshell.png "Azure Cloud Shell")
 
 3. The first time Cloud Shell is started will require you to create a storage account. In our lab, you must click `Advanced` and enter an account name and share.
 

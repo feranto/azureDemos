@@ -341,23 +341,10 @@ You should now have a Kubernetes cluster running with 2 nodes. You do not see th
 
 ## Review/Edit the YAML Config Files
 
-1. In Azure Cloud Shell edit `heroes-db.yaml` using `vi`
+1. En el Azure Cloud Shell vamos a descargar el archivo yaml de kubernetes
+    ```bash
+    curl https://raw.githubusercontent.com/feranto/azureDemos/master/OpenDevFrameworks/Kubernetes/Kubernetes-MachineLearning/recursos/KubernetesDeploymentFiles/pymanualtransmission.yaml -o pymanualtransmission.yaml
     ```
-    cd ~/blackbelt-aks-hackfest/labs/helper-files
-
-    vi heroes-db.yaml
-    ```
-    * Review the yaml file and learn about some of the settings
-    * Update the yaml file for the proper container image name
-    * You will need to replace the `<login server>` with the ACR login server created in lab 2
-    * Example: 
-
-        ```
-        spec:
-        containers:
-        - image: mycontainerregistry.azurecr.io/azureworkshop/rating-db:v1
-            name:  heroes-db-cntnr
-        ```
 
 2. In Azure Cloud Shell edit `heroes-web-api.yaml` using `vi`
     ```

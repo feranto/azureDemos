@@ -37,7 +37,7 @@ az vm create --resource-group $RG_NAME \
 ```
 *   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh
 ```bash 
-PUBLIC_IP_ADDRESS=<PUBLIC_IP_ADDRESS>
+PUBLIC_IP_ADDRESS=<YOUR_PUBLIC_IP_ADDRESS>
 ```
 ```bash 
 ssh $PUBLIC_IP_ADDRESS

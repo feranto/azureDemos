@@ -20,7 +20,7 @@ metadata:
   labels:
     name:  ml-webservice
 spec:
-  replicas: 3
+  replicas: 2
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -38,8 +38,8 @@ spec:
         name:  pymanualtransmission-cntnr
         resources:
           requests:
-            cpu: "30m"
-            memory: "750M"
+            cpu: "2"
+            memory: "1000M"
         ports:
         - containerPort:  12800
           name:  ml-webservice

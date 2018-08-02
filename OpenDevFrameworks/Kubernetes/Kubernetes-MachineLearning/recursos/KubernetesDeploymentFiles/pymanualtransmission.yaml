@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-machinelearning-api
+  labels:
+    name: python-machinelearning-api
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000
+  selector:
+    name: python-webservice-machinelearning
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  python-machinelearning-webservice
+  labels:
+    name:  python-machinelearning-webservice
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  python-machinelearning-webservice
+    spec:
+      imagePullSecrets:
+        - name: acr-secret
+      containers:
+      - image: <login server>/azureworkshop/pymanualtransmission:v1
+        name:  pymanualtransmission-cntnr
+        resources:
+          requests:
+            cpu: "30m"
+            memory: "750M"
+        ports:
+        - containerPort:  12800
+          name:  python-machinelearning-webservice
+        imagePullPolicy: Always
+      restartPolicy: Always

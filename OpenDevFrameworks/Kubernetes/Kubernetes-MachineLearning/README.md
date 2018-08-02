@@ -13,7 +13,7 @@
 *	Activar suscripción de 25 USD mensuales de Azure durante 12 meses
 
 
-## Creación de Imagenes Docker##
+## Creación de Imagenes Docker ##
 ### Creación de vm Linux ###
 
 *   Primero accedemos a la [consola web de azure](http://shell.azure.com/)
@@ -287,7 +287,7 @@ v1: digest: sha256:f84eba148dfe244f8f8ad0d4ea57ebf82b6ff41f27a903cbb7e3fbe377bb2
     # set the location to one of the provided AKS locations (eg - centralus, eastus)
     LOCATION=
 
-    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.7.7 --generate-ssh-keys -l $LOCATION
+    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.10.3 --generate-ssh-keys -l $LOCATION
     ```
 
 8. Verify your cluster status. The `ProvisioningState` should be `Succeeded`

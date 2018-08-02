@@ -1,5 +1,7 @@
 # Orquestando webservices de machine learning en python con Kubernetes
 
+[![Dockerizando servicios de machine learning en R y python con Docker y kubernetes](imagenes/image214.png)](https://blogs.msdn.microsoft.com/mlserver/2018/07/26/dockerizing-r-and-python-web-services/)
+
 ## Pre-requisitos ##
 
 * Ver este genial Video(Guia Ilustrada de Kubernetes para niños):

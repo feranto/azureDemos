@@ -86,6 +86,57 @@ sudo sed -i -- 's/#port = 27017/port = 27019/g' /etc/mongodb.conf
 ##Reiniciamos el servicio de Mongodb
 sudo service mongodb restart
 ```
+*   Clonamos los datos de la aplicación y la aplicación
+```bash 
+git clone https://github.com/Azure/blackbelt-aks-hackfest.git
+```
+
+*   Cargamos la data en mongodb
+```bash 
+cd ~/blackbelt-aks-hackfest/app/db
+
+mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray
+```
+
+## Corremos la Api en Express JS
+
+La API para la aplicación está escrita en javascript, corriendo en [Node.js](https://nodejs.org/en/ "Node.js Homepage") y [Express](http://expressjs.com/ "Express Homepage")
+
+1. Primero actualizamos las dependencias y corremos la app utilizando node dentro de la vm
+
+    ```bash
+    cd ~/blackbelt-aks-hackfest/app/api
+
+    npm install && npm run localmachine
+    ```
+
+2. Podemos abrir una nueva terminal a la vm y probar la api localmente usando curl
+
+    ```bash
+    curl http://localhost:3000/api/heroes
+    ```
+    
+
+## Aplicación web - Vue.js, Node.js
+
+El frontend de la aplicación está escrita en [Vue.js](https://vuejs.org/Vue "Vue.js Homepage"), corriendo en [Node.js](https://nodejs.org/en/ "Node.js Homepage") con [Webpack](https://webpack.js.org/ "Webpack Homepage")
+
+1. Abrimos una nueva terminal a la vm
+2. Actualizamos las dependencias utilizando npm
+
+    ```bash
+    cd ~/blackbelt-aks-hackfest/app/web
+
+    npm install && npm run localmachine
+    ```
+3. Probamos el frontend
+
+    La vm deberia tener abierto el puerto 8080. Deberiamos poder navegar al siguiente link: <IP_PUBLICA_VM>:8080 
+
+    Tambien lo podemos probar localmente desde la terminal utilizando curl:
+    ```bash
+    curl http://localhost:8080
+    ```
 
 
 

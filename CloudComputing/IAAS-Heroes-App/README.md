@@ -37,6 +37,9 @@ az vm create --resource-group $RG_NAME --name $VM_NAME --image UbuntuLTS --gener
 # Abrimos el puerto 8080 para permitir trafico web.
 az vm open-port --port 8080 --resource-group $RG_NAME --name $VM_NAME
 
+# Abrimos el puerto 8080 para permitir trafico web.
+az vm open-port --port 3000 --resource-group $RG_NAME --name $VM_NAME
+
 # Usamos la extension CustomScript para instalar nodejs, npm, mongodb y docker
 az vm extension set \
   --publisher Microsoft.Azure.Extensions \
@@ -65,7 +68,7 @@ sudo service mongodb restart
 ```
 *   Clonamos los datos de la aplicación y la aplicación
 ```bash 
-git clone https://github.com/Azure/blackbelt-aks-hackfest.git
+git clone https://github.com/feranto/blackbelt-aks-hackfest.git
 ```
 
 *   Cargamos la data en mongodb

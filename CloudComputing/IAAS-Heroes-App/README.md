@@ -30,19 +30,24 @@ az group create --name $RG_NAME --location $REGION
 ```
 
 *   Una vez creado el grupo de recurso, creamos una vm ubuntu
-```bash 
-az vm create --resource-group $RG_NAME \
-  --name $VM_NAME \
-  --image UbuntuLTS \
-  --generate-ssh-keys \
-  --size Standard_DS4 \
-  --verbose
+```bash
+# Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
+az vm create --resource-group $RG_NAME --name $VM_NAME--image UbuntuLTS --generate-ssh-keys
+
+# Abrimos el puerto 8080 para permitir trafico web.
+az vm open-port --port 8080 --resource-group $RG_NAME --name $VM_NAME
+
+# Usamos la extension CustomScript para instalar nodejs, npm, mongodb y docker
+az vm extension set \
+  --publisher Microsoft.Azure.Extensions \
+  --version 2.0 \
+  --name CustomScript \
+  --vm-name $VM_NAME\
+  --resource-group $RG_NAME \
+  --settings '{"commandToExecute":"apt-get -y update && apt-get -y install nodejs && apt-get -y install npm && ln -s /usr/bin/nodejs /usr/local/bin/node && apt-get -y install mongodb && mongod --port 2719 && apt-get -y install docker.io"}'
 ```
 
 *   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh
 ```bash 
-PUBLIC_IP_ADDRESS=<YOUR_PUBLIC_IP_ADDRESS>
-```
-```bash 
-ssh $PUBLIC_IP_ADDRESS
+ssh <TU_DIRECCIÓN_IP_PUBLICA>
 ```

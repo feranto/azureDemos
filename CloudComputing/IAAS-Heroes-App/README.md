@@ -32,7 +32,7 @@ az group create --name $RG_NAME --location $REGION
 *   Una vez creado el grupo de recurso, creamos una vm ubuntu
 ```bash
 # Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
-az vm create --resource-group $RG_NAME --name $VM_NAME--image UbuntuLTS --generate-ssh-keys
+az vm create --resource-group $RG_NAME --name $VM_NAME --image UbuntuLTS --generate-ssh-keys
 
 # Abrimos el puerto 8080 para permitir trafico web.
 az vm open-port --port 8080 --resource-group $RG_NAME --name $VM_NAME

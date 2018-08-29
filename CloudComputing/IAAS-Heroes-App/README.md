@@ -13,6 +13,36 @@ En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de 
 
 ##  Creación de Vm ubuntu
 
-El primer paso que debemos realizar es la creación de la vm. Para ello ingresaremos a <a href="https://shell.azure.com">la terminal web de azure </a> y ejecutaremos el siguiente comando:
+*   Primero accedemos a la [consola web de azure](http://shell.azure.com/)
 
 <img src="images/webshell.PNG" width="550">
+
+*   Luego procedemos a definir algunas variables que usaremos
+```bash 
+    RG_NAME=iaasHeroesApp  
+    VM_NAME=HeroesAppUbuntuVm
+    REGION=eastus
+```
+
+*   Luego procedemos a crear un grupo de recursos
+```bash 
+az group create --name $RG_NAME --location $REGION
+```
+
+*   Una vez creado el grupo de recurso, creamos una vm ubuntu
+```bash 
+az vm create --resource-group $RG_NAME \
+  --name $VM_NAME \
+  --image UbuntuLTS \
+  --generate-ssh-keys \
+  --size Standard_DS4 \
+  --verbose
+```
+
+*   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh
+```bash 
+PUBLIC_IP_ADDRESS=<YOUR_PUBLIC_IP_ADDRESS>
+```
+```bash 
+ssh $PUBLIC_IP_ADDRESS
+```

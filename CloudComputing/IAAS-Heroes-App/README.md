@@ -68,7 +68,7 @@ sudo service mongodb restart
 ```
 *   Clonamos los datos de la aplicación y la aplicación
 ```bash 
-git clone https://github.com/feranto/blackbelt-aks-hackfest.git
+git clone https://github.com/Azure/blackbelt-aks-hackfest.git
 ```
 
 *   Cargamos la data en mongodb

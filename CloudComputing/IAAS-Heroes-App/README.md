@@ -52,29 +52,6 @@ az vm extension set \
 ssh <TU_DIRECCIÓN_IP_PUBLICA>
 ```
 
-## Administrar docker como usuario no-root
-*   Una vez dentro de la vm, ejecutamos los siguientes scripts para poder ejecutar docker más facilmente
-*   Creación grupo docker
-```bash 
-sudo groupadd docker
-```
-*   Agregamos nuestro usuario al grupo
-```bash 
-sudo usermod -aG docker $USER
-```
-*   Hacemos log out y volvemos a loguearnos
-```bash 
-exit
-```
-```bash 
-ssh <PUBLIC_IP_ADDRESS>
-```
-
-*   Verificamos que podamos correr docker sin usuario root
-```bash 
-docker run hello-world
-```
-
 ## Corremos Mongodb
 
 *   Antes de iniciar mongodb le cambiaremos el puerto a 27019 para ello ejecutamos el siguiente comando
@@ -139,4 +116,25 @@ El frontend de la aplicación está escrita en [Vue.js](https://vuejs.org/Vue "V
     ```
 
 
+## Administrar docker como usuario no-root
+*   Una vez dentro de la vm, ejecutamos los siguientes scripts para poder ejecutar docker más facilmente
+*   Creación grupo docker
+```bash 
+sudo groupadd docker
+```
+*   Agregamos nuestro usuario al grupo
+```bash 
+sudo usermod -aG docker $USER
+```
+*   Hacemos log out y volvemos a loguearnos
+```bash 
+exit
+```
+```bash 
+ssh <PUBLIC_IP_ADDRESS>
+```
 
+*   Verificamos que podamos correr docker sin usuario root
+```bash 
+docker run hello-world
+```

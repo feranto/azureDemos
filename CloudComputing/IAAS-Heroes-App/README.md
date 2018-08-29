@@ -77,8 +77,15 @@ docker run hello-world
 
 ## Corremos Mongodb
 
+*   Antes de iniciar mongodb le cambiaremos el puerto a 27019 para ello ejecutamos el siguiente comando
 
+```bash 
+##Cambiamos el puerto en el archivo de configuracion de mongodb
+sudo sed -i -- 's/#port = 27017/port = 27019/g' /etc/mongodb.conf
 
+##Reiniciamos el servicio de Mongodb
+sudo service mongodb restart
+```
 
 
 

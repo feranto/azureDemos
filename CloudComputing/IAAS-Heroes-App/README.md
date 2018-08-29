@@ -44,7 +44,7 @@ az vm extension set \
   --name CustomScript \
   --vm-name $VM_NAME\
   --resource-group $RG_NAME \
-  --settings '{"commandToExecute":"apt-get -y update && apt-get -y install nodejs && apt-get -y install npm && ln -s /usr/bin/nodejs /usr/local/bin/node && apt-get -y install mongodb && mongod --port 2719 && apt-get -y install docker.io"}'
+  --settings '{"commandToExecute":"apt-get -y update && apt-get -y install nodejs && apt-get -y install npm && ln -s /usr/bin/nodejs /usr/local/bin/node && apt-get -y install mongodb && apt-get -y install docker.io"}'
 ```
 
 *   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh

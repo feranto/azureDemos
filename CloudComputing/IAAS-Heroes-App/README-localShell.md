@@ -37,7 +37,7 @@ az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuS
 az vm open-port --port 22 --priority 101 --resource-group $RG_NAME --name $VM_NAME
 
 # Abrimos el puerto 8080 para permitir trafico web.
-az vm open-port --port 8080 --resource-group $RG_NAME --name $VM_NAME
+az vm open-port --port 8080 --priority 102  --resource-group $RG_NAME --name $VM_NAME
 
 # Usamos la extension CustomScript para instalar nodejs, npm, mongodb y docker
 az vm extension set \

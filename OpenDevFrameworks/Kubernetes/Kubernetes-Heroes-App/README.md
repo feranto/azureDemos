@@ -1,4 +1,4 @@
-#   Subiendo los contenedores de Heroes APP (Vue js, Express, MongoDb) a Azure Container Registry
+#   Desplegando Heroes APP (Vue js, Express, MongoDb) en AKS
 
 En este tutorial subiremos a Azure Container Registry los contenedores de frontend, api y bbdd mongodb de la aplicación Heroes APP.
 

@@ -1,6 +1,6 @@
-#   Heroes APP (Vue js, Express, MongoDb) on Ubuntu VM
+#   Heroes APP (Vue js, Express, MongoDb), on Docker Container on Ubuntu VM
 
-En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de azure.
+En este tutorial desplegaremos la aplicación de Heroes app en contenedores, dentro de una vm y dentro de azure.
 
 ## Pre-requisitos ##
 
@@ -9,12 +9,13 @@ En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de 
 *	Instalar [Visual Studio Code](https://code.visualstudio.com/download)
 *	Si no tienes suscripción de Azure, Activar [Visual Studio Dev Essentials](https://www.visualstudio.com/es/dev-essentials/)
 *	Activar suscripción de 25 USD mensuales de Azure durante 12 meses
+*   Haber ejecutado el taller de [IAAS-Heroes-App anteriormente](https://github.com/feranto/azureDemos/tree/master/CloudComputing/IAAS-Heroes-App)
 
+##  Creación de Imagen de Aplicación Web
 
-##  Creación de Vm ubuntu
+*   Primero accedemos a la [consola web de azure](http://shell.azure.com/)
 
-*   Primero hacemos login con nuestra terminal local [consola de azure](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest)
-
+<img src="images/webshell.PNG" width="550">
 
 *   Luego procedemos a definir algunas variables que usaremos
 ```bash 
@@ -28,16 +29,13 @@ En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de 
 az group create --name $RG_NAME --location $REGION
 ```
 
-*   Una vez creado el grupo de recurso, creamos una vm ubuntu y le pasamos nuestra llave ssh
+*   Una vez creado el grupo de recurso, creamos una vm ubuntu
 ```bash
 # Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
-az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuServer:18.04-LTS:18.04.201804262 --ssh-key ~/.ssh/id_rsa.pub
-
-# Abrimos el puerto 22 para permitir acceso ssh
-az vm open-port --port 22 --priority 101 --resource-group $RG_NAME --name $VM_NAME
+az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuServer:18.04-LTS:18.04.201804262 --generate-ssh-keys
 
 # Abrimos el puerto 8080 para permitir trafico web.
-az vm open-port --port 8080 --priority 102  --resource-group $RG_NAME --name $VM_NAME
+az vm open-port --port 8080 --resource-group $RG_NAME --name $VM_NAME
 
 # Usamos la extension CustomScript para instalar nodejs, npm, mongodb y docker
 az vm extension set \

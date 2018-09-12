@@ -26,35 +26,12 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     az account list
     ```
 
-4. Find your RG name
+4. Definimos una variable con el nombre de nuestro Grupo de Recursos:
 
-    ```
-    az group list 
-    ```
+
     
     ```
-
-    [
-    {
-        "id": "/subscriptions/b23accae-e655-44e6-a08d-85fb5f1bb854/resourceGroups/ODL-aks-v2-gbb-8386",
-        "location": "centralus",
-        "managedBy": null,
-        "name": "ODL-aks-v2-gbb-8386",
-        "properties": {
-        "provisioningState": "Succeeded"
-        },
-        "tags": {
-        "AttendeeId": "8391",
-        "LaunchId": "486",
-        "LaunchType": "ODL",
-        "TemplateId": "1153"
-        }
-    }
-    ]
-
-    # copy the name from the results above and set to a variable 
-    
-    NAME=
+    NAME=<Nombre_Grupo_Recursos>
 
     # We need to use a different cluster name, as sometimes the name in the group list has an underscore, and only dashes are permitted
     

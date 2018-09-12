@@ -12,27 +12,21 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
 *   Haber ejecutado el taller de [AzureContainerRegistry-Heroes-App anteriormente](https://github.com/feranto/azureDemos/tree/master/OpenDevFrameworks/Docker/AzureContainerRegistry-Heroes-App)
 
 
-## Create AKS cluster
+## Creamos cluster AKS 
 
-1. Login to Azure Portal at http://portal.azure.com. Your Azure login ID will look something like `odl_user_9294@gbbossteamoutlook.onmicrosoft.com`
-2. Open the Azure Cloud Shell
+1. Open the Azure Shell, az-cli
 
-
-3. The first time Cloud Shell is started will require you to create a storage account. In our lab, you must click `Advanced` and enter an account name and share.
-
-4. Once your cloud shell is started, clone the workshop repo into the cloud shell environment
+2. Once your cloud shell is started, clone the workshop repo into the cloud shell environment
     ```
     git clone https://github.com/Azure/blackbelt-aks-hackfest.git
     ```
-
-5. In the cloud shell, you are automatically logged into your Azure subscription. ```az login``` is not required.
     
-6. Verify your subscription is correctly selected as the default
+3. Verify your subscription is correctly selected as the default
     ```
     az account list
     ```
 
-7. Find your RG name
+4. Find your RG name
 
     ```
     az group list 
@@ -68,32 +62,32 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     
     ```
 
-8. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.7.7
+5. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.11.2
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
     
     # set the location to one of the provided AKS locations (eg - centralus, eastus)
     LOCATION=
 
-    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.7.7 --generate-ssh-keys -l $LOCATION
+    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.11.2 --generate-ssh-keys -l $LOCATION
     ```
 
-9. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
+6. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
     ```
     az aks list -o table
 
     Name                 Location    ResourceGroup         KubernetesVersion    ProvisioningState    Fqdn
     -------------------  ----------  --------------------  -------------------  -------------------  -------------------------------------------------------------------
-    ODLaks-v2-gbb-16502  centralus   ODL_aks-v2-gbb-16502  1.7.7                Succeeded             odlaks-v2--odlaks-v2-gbb-16-b23acc-17863579.hcp.centralus.azmk8s.io
+    ODLaks-v2-gbb-16502  centralus   ODL_aks-v2-gbb-16502  1.11.2                Succeeded             odlaks-v2--odlaks-v2-gbb-16-b23acc-17863579.hcp.centralus.azmk8s.io
     ```
 
 
-10. Get the Kubernetes config files for your new AKS cluster
+7.  Get the Kubernetes config files for your new AKS cluster
     ```
     az aks get-credentials -n $CLUSTER_NAME -g $NAME
     ```
 
-11. Verify you have API access to your new AKS cluster
+8.  Verify you have API access to your new AKS cluster
 
     > Note: It can take 5 minutes for your nodes to appear and be in READY state. You can run `watch kubectl get nodes` to monitor status. 
     
@@ -101,8 +95,8 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     kubectl get nodes
     
     NAME                       STATUS    ROLES     AGE       VERSION
-    aks-nodepool1-20004257-0   Ready     agent     4m        v1.7.7
-    aks-nodepool1-20004257-1   Ready     agent     4m        v1.7.7
+    aks-nodepool1-20004257-0   Ready     agent     4m        v1.11.2
+    aks-nodepool1-20004257-1   Ready     agent     4m        v1.11.2
     ```
     
     To see more details about your cluster: 
@@ -121,9 +115,9 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
 You should now have a Kubernetes cluster running with 2 nodes. You do not see the master servers for the cluster because these are managed by Microsoft. The Control Plane services which manage the Kubernetes cluster such as scheduling, API access, configuration data store and object controllers are all provided as services to the nodes. 
 
 
-# Deploy the Superhero Ratings App to AKS
+# Desplegamos la app de Heroes en AKS
 
-## Review/Edit the YAML Config Files
+## Revisamos/Editamos archivos de configuraicon YAML
 
 1. In Azure Cloud Shell edit `heroes-db.yaml` using `vi`
     ```
@@ -163,7 +157,7 @@ You should now have a Kubernetes cluster running with 2 nodes. You do not see th
             name:  heroes-web-cntnr
         ```
 
-## Setup AKS with access to Azure Container Registry
+## Configuramos el acceso a Azure Container Registry en AKS
 
 There are a few ways that AKS clusters can access your private Azure Container Registry. Generally the service account that kubernetes utilizes will have rights based on its Azure credentials. In our lab config, we must create a secret to allow this access. 
 
@@ -178,7 +172,7 @@ kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --d
 
 > Note: You can review the `heroes-db.yaml` and `heroes-web-api.yaml` to see where the `imagePullSecrets` are configured.
 
-## Deploy database container to AKS
+## Desplegamos la bbdd  a AKS
 
 * Use the kubectl CLI to deploy each app
     ```
@@ -216,7 +210,7 @@ kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --d
     # be sure to exit pod as shown above
     ```
 
-## Deploy the web and api containers to AKS
+## Desplegamos la web y la api a AKS
 
 * Use the kubectl CLI to deploy each app
 
@@ -226,7 +220,7 @@ kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --d
     kubectl apply -f heroes-web-api.yaml
     ```
 
-## Validate
+## Validamos
 
 * Check to see if pods are running in your cluster
     ```

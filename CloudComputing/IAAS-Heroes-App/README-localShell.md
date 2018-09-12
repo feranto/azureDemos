@@ -1,6 +1,6 @@
-#   Heroes APP (Vue js, Express, MongoDb), on Docker Container on Ubuntu VM
+#   Heroes APP (Vue js, Express, MongoDb) on Ubuntu VM
 
-En este tutorial desplegaremos la aplicación de Heroes app en contenedores, dentro de una vm y dentro de azure.
+En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de azure.
 
 ## Pre-requisitos ##
 
@@ -9,9 +9,9 @@ En este tutorial desplegaremos la aplicación de Heroes app en contenedores, den
 *	Instalar [Visual Studio Code](https://code.visualstudio.com/download)
 *	Si no tienes suscripción de Azure, Activar [Visual Studio Dev Essentials](https://www.visualstudio.com/es/dev-essentials/)
 *	Activar suscripción de 25 USD mensuales de Azure durante 12 meses
-*   Haber ejecutado el taller de [IAAS-Heroes-App anteriormente](https://github.com/feranto/azureDemos/tree/master/CloudComputing/IAAS-Heroes-App)
 
-##  Creación de Imagen de Aplicación Web
+
+##  Creación de Vm ubuntu
 
 *   Primero accedemos a la [consola web de azure](http://shell.azure.com/)
 

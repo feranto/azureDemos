@@ -163,3 +163,9 @@ docker network create --subnet=172.18.0.0/16 my-network
     curl http://localhost:8080
     ```
 
+    Para detener todos los contenedores, podemos utilizar:
+    
+    ```bash
+    docker stop $(docker ps -aq)
+    ```
+

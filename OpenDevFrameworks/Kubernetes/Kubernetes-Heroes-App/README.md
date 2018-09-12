@@ -100,6 +100,11 @@ You should now have a Kubernetes cluster running with 2 nodes. You do not see th
 
 # Desplegamos la app de Heroes en AKS
 
+Primero procedemos a clonar la aplicación, si no lo hemos hecho:
+    ```
+    git clone https://github.com/Azure/blackbelt-aks-hackfest.git
+    ```
+
 ## Revisamos/Editamos archivos de configuraicon YAML
 
 1. In Azure Cloud Shell edit `heroes-db.yaml` using `vi`

@@ -28,10 +28,13 @@ En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de 
 az group create --name $RG_NAME --location $REGION
 ```
 
-*   Una vez creado el grupo de recurso, creamos una vm ubuntu
+*   Una vez creado el grupo de recurso, creamos una vm ubuntu y le pasamos nuestra llave ssh
 ```bash
 # Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
-az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuServer:18.04-LTS:18.04.201804262 --generate-ssh-keys
+az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuServer:18.04-LTS:18.04.201804262 --ssh-key ~/.ssh/id_rsa.pub
+
+# Abrimos el puerto 22 para permitir acceso ssh
+az vm open-port --port 22 --priority 101 --resource-group $RG_NAME --name $VM_NAME
 
 # Abrimos el puerto 8080 para permitir trafico web.
 az vm open-port --port 8080 --resource-group $RG_NAME --name $VM_NAME

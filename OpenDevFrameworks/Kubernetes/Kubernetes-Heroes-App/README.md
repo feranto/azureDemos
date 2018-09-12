@@ -103,6 +103,7 @@ You should now have a Kubernetes cluster running with 2 nodes. You do not see th
 Primero procedemos a clonar la aplicación, si no lo hemos hecho:
 
     ```
+    
     git clone https://github.com/Azure/blackbelt-aks-hackfest.git
     ```
 

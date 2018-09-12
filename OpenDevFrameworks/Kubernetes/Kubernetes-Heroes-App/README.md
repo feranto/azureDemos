@@ -55,11 +55,7 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     ```
 
 
-7.  Get the Kubernetes config files for your new AKS cluster
-    ```
-    az aks get-credentials -n $CLUSTER_NAME -g $NAME
-    ```
-8. En caso de no tener instalado Kubectl, instalarlo en ubuntu con los siguientes comandos:
+7.  En caso de no tener instalado Kubectl, instalarlo en ubuntu con los siguientes comandos:
 
     ```
     sudo apt-get update && sudo apt-get install -y apt-transport-https
@@ -69,8 +65,10 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     sudo apt-get update
     sudo apt-get install -y kubectl
     ```
-
-
+8. Get the Kubernetes config files for your new AKS cluster
+    ```
+    az aks get-credentials -n $CLUSTER_NAME -g $NAME
+    ```
 
 9.  Verify you have API access to your new AKS cluster
 

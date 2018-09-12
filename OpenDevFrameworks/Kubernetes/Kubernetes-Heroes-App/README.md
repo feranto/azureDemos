@@ -31,20 +31,16 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
 
     
     ```
-    NAME=<Nombre_Grupo_Recursos>
-
-    # We need to use a different cluster name, as sometimes the name in the group list has an underscore, and only dashes are permitted
-    
+    NAME=<Nombre_Grupo_Recursos>    
     CLUSTER_NAME="${NAME//_}"
+    # set the location to one of the provided AKS locations (eg - centralus, eastus)
+    LOCATION=<Location>
     
     ```
 
 5. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.11.2
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
-    
-    # set the location to one of the provided AKS locations (eg - centralus, eastus)
-    LOCATION=
 
     az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.11.2 --generate-ssh-keys -l $LOCATION
     ```

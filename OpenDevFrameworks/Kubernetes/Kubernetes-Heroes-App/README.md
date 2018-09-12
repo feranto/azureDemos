@@ -42,7 +42,7 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
-    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.11.2 --generate-ssh-keys -l $LOCATION
+    az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.11.2 --ssh-key-value ~/.ssh/id_rsa.pub -l $LOCATION
     ```
 
 6. Verify your cluster status. The `ProvisioningState` should be `Succeeded`

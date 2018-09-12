@@ -61,7 +61,7 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     ```
 8. En caso de no tener instalado Kubectl, instalarlo en ubuntu con los siguientes comandos:
 
- ```
+    ```
     sudo apt-get update && sudo apt-get install -y apt-transport-https
     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
     sudo touch /etc/apt/sources.list.d/kubernetes.list 

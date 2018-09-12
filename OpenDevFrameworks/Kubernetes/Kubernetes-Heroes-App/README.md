@@ -59,8 +59,22 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     ```
     az aks get-credentials -n $CLUSTER_NAME -g $NAME
     ```
+8. En caso de no tener instalado Kubectl, instalarlo en ubuntu con los siguientes comandos:
 
-8.  Verify you have API access to your new AKS cluster
+ ```
+
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo touch /etc/apt/sources.list.d/kubernetes.list 
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
+    ```
+
+
+
+9.  Verify you have API access to your new AKS cluster
 
     > Note: It can take 5 minutes for your nodes to appear and be in READY state. You can run `watch kubectl get nodes` to monitor status. 
     

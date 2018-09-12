@@ -235,3 +235,16 @@ kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --d
 * Browse to the External IP for your web application (on port 8080) and try the app
 
 > The public IP can take a few minutes to create with a new cluster. Sit back and relax. Maybe check Facebook. 
+
+* Finalmente para acceder al dashboard de kubernetes, usamos el comando:
+    ```
+    az aks browse -n $CLUSTER_NAME -g $NAME
+    ```
+
+    o
+
+    ```
+    kubectl proxy
+    ```
+
+    [workaround permisos](https://pascalnaber.wordpress.com/2018/06/17/access-dashboard-on-aks-with-rbac-enabled/)

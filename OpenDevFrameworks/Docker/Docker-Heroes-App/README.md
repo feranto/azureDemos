@@ -169,3 +169,8 @@ docker network create --subnet=172.18.0.0/16 my-network
     docker stop $(docker ps -aq)
     ```
 
+    Para eliminar todos los contenedores, podemos utilizar:
+
+     ```bash
+    docker rm $(docker ps -aq)
+    ```

@@ -31,3 +31,6 @@ En este taller aprenderemos los siguientes conceptos:
 ## Laboratorios 
 *   [Laboratorio Docker](https://feranto.github.io/azureDemos/OpenDevFrameworks/Docker/Expert-Academy-Docker/)
 *   [Laboratorio Kubernetes](https://feranto.github.io/azureDemos/OpenDevFrameworks/Kubernetes/Expert-Academy-Kubernetes/)
+
+
+[basado en el laboratorio GlobalBlackBelt AKS Hackfest](https://github.com/feranto/blackbelt-aks-hackfest)

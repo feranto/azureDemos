@@ -16,11 +16,18 @@ En este tutorial desplegaremos la aplicación de Heroes app en contenedores, den
 For the first container, we will be creating a Dockerfile from scratch. For the other containers, the Dockerfiles are provided.
 
 ### Contenedor Front-end
+*   Traemos el codigo
+
+
 
 * Create a Dockerfile
 
     * Access the jumpbox
     * In the `~/blackbelt-aks-hackfest/app/web` directory, add a file called "Dockerfile"
+```
+cd ~/blackbelt-aks-hackfest/app/web
+```
+
         * If you in in a SSH session, use vi as the editor
         * In RDP, you can use Visual Studio Code
 

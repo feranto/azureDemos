@@ -19,9 +19,9 @@ En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de 
 
 *   Luego procedemos a definir algunas variables que usaremos
 ```
-    RG_NAME=iaasHeroesApp  
-    VM_NAME=HeroesAppUbuntuVm
-    REGION=eastus
+RG_NAME=iaasHeroesApp  
+VM_NAME=HeroesAppUbuntuVm
+REGION=eastus
 ```
 
 *   Luego procedemos a crear un grupo de recursos
@@ -79,7 +79,7 @@ mongoimport --host localhost:27019 --db webratings --collection heroes --file ./
 
 La API para la aplicación está escrita en javascript, corriendo en [Node.js](https://nodejs.org/en/ "Node.js Homepage") y [Express](http://expressjs.com/ "Express Homepage")
 
-1. Primero actualizamos las dependencias y corremos la app utilizando node dentro de la vm
+* Primero actualizamos las dependencias y corremos la app utilizando node dentro de la vm
 
     ```bash
     cd ~/blackbelt-aks-hackfest/app/api
@@ -87,7 +87,7 @@ La API para la aplicación está escrita en javascript, corriendo en [Node.js](h
     npm install && npm run localmachine
     ```
 
-2. Podemos abrir una nueva terminal a la vm y probar la api localmente usando curl
+* Podemos abrir una nueva terminal a la vm y probar la api localmente usando curl
 
     ```bash
     curl http://localhost:3000/api/heroes
@@ -98,22 +98,22 @@ La API para la aplicación está escrita en javascript, corriendo en [Node.js](h
 
 El frontend de la aplicación está escrita en [Vue.js](https://vuejs.org/Vue "Vue.js Homepage"), corriendo en [Node.js](https://nodejs.org/en/ "Node.js Homepage") con [Webpack](https://webpack.js.org/ "Webpack Homepage")
 
-1. Abrimos una nueva terminal a la vm
-2. Actualizamos las dependencias utilizando npm
+* Abrimos una nueva terminal a la vm
+* Actualizamos las dependencias utilizando npm
 
-    ```bash
-    cd ~/blackbelt-aks-hackfest/app/web
+```bash
+cd ~/blackbelt-aks-hackfest/app/web
 
-    npm install && npm run localmachine
-    ```
-3. Probamos el frontend
+npm install && npm run localmachine
+```
+* Probamos el frontend
 
     La vm deberia tener abierto el puerto 8080. Deberiamos poder navegar al siguiente link: <IP_PUBLICA_VM>:8080 
 
     Tambien lo podemos probar localmente desde la terminal utilizando curl:
-    ```bash
-    curl http://localhost:8080
-    ```
+```bash
+curl http://localhost:8080
+```
 
 
 ## Administrar docker como usuario no-root

@@ -29,7 +29,7 @@ En este taller aprenderemos los siguientes conceptos:
 * OSS tools Kubernetes
 
 ## Laboratorios 
-*   [Laboratorio Docker](https://feranto.github.io/azureDemos/OpenDevFrameworks/Docker/Expert-Academy-Docker/)
+*   [Laboratorio Docker](https://feranto.github.io/azureDemos/OpenDevFrameworks/Docker/Expert-Academy/)
 *   [Laboratorio Kubernetes](https://feranto.github.io/azureDemos/OpenDevFrameworks/Kubernetes/Expert-Academy-Kubernetes/)
 
 

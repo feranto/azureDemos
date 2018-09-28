@@ -18,14 +18,14 @@ En este tutorial desplegaremos la aplicación de Heroes app en una vm dentro de 
 <img src="images/webshell.PNG" width="550">
 
 *   Luego procedemos a definir algunas variables que usaremos
-```bash 
+```
     RG_NAME=iaasHeroesApp  
     VM_NAME=HeroesAppUbuntuVm
     REGION=eastus
 ```
 
 *   Luego procedemos a crear un grupo de recursos
-```bash 
+```
 az group create --name $RG_NAME --location $REGION
 ```
 
@@ -48,7 +48,7 @@ az vm extension set \
 ```
 
 *   Una vez creada la vm, buscamos la dirección de la IP pública y nos conectamos vía ssh
-```bash 
+```
 ssh <TU_DIRECCIÓN_IP_PUBLICA>
 ```
 
@@ -56,7 +56,7 @@ ssh <TU_DIRECCIÓN_IP_PUBLICA>
 
 *   Antes de iniciar mongodb le cambiaremos el puerto a 27019 para ello ejecutamos el siguiente comando
 
-```bash 
+```
 ##Cambiamos el puerto en el archivo de configuracion de mongodb
 sudo sed -i -- 's/#port = 27017/port = 27019/g' /etc/mongodb.conf
 
@@ -64,12 +64,12 @@ sudo sed -i -- 's/#port = 27017/port = 27019/g' /etc/mongodb.conf
 sudo service mongodb restart
 ```
 *   Clonamos los datos de la aplicación y la aplicación
-```bash 
+```
 git clone https://github.com/Azure/blackbelt-aks-hackfest.git
 ```
 
 *   Cargamos la data en mongodb
-```bash 
+```
 cd ~/blackbelt-aks-hackfest/app/db
 
 mongoimport --host localhost:27019 --db webratings --collection heroes --file ./heroes.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection ratings --file ./ratings.json --jsonArray && mongoimport --host localhost:27019 --db webratings --collection sites --file ./sites.json --jsonArray
@@ -119,22 +119,22 @@ El frontend de la aplicación está escrita en [Vue.js](https://vuejs.org/Vue "V
 ## Administrar docker como usuario no-root
 *   Una vez dentro de la vm, ejecutamos los siguientes scripts para poder ejecutar docker más facilmente
 *   Creación grupo docker
-```bash 
+```
 sudo groupadd docker
 ```
 *   Agregamos nuestro usuario al grupo
-```bash 
+```
 sudo usermod -aG docker $USER
 ```
 *   Hacemos log out y volvemos a loguearnos
-```bash 
+```
 exit
 ```
-```bash 
+```
 ssh <PUBLIC_IP_ADDRESS>
 ```
 
 *   Verificamos que podamos correr docker sin usuario root
-```bash 
+```
 docker run hello-world
 ```

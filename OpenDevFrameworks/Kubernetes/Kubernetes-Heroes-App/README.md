@@ -14,19 +14,19 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
 
 ## Creamos cluster AKS 
 
-1. Open the Azure Shell, az-cli
+* Open the Azure Shell, az-cli
 
-2. Once your cloud shell is started, clone the workshop repo into the cloud shell environment
+* Once your cloud shell is started, clone the workshop repo into the cloud shell environment
     ```
     git clone https://github.com/Azure/blackbelt-aks-hackfest.git
     ```
     
-3. Verify your subscription is correctly selected as the default
+* Verify your subscription is correctly selected as the default
     ```
     az account list
     ```
 
-4. Definimos una variable con el nombre de nuestro Grupo de Recursos:
+* Definimos una variable con el nombre de nuestro Grupo de Recursos:
 
 
     
@@ -38,14 +38,14 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     
     ```
 
-5. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.11.2
+* Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.11.2
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
     az aks create -n $CLUSTER_NAME -g $NAME -c 2 -k 1.11.2 --ssh-key-value ~/.ssh/id_rsa.pub -l $LOCATION
     ```
 
-6. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
+* Verify your cluster status. The `ProvisioningState` should be `Succeeded`
     ```
     az aks list -o table
 
@@ -55,7 +55,7 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     ```
 
 
-7.  En caso de no tener instalado Kubectl, instalarlo en ubuntu con los siguientes comandos:
+*  En caso de no tener instalado Kubectl, instalarlo en ubuntu con los siguientes comandos:
 
     ```
     sudo apt-get update && sudo apt-get install -y apt-transport-https
@@ -65,12 +65,12 @@ En este tutorial subiremos a Azure Container Registry los contenedores de fronte
     sudo apt-get update
     sudo apt-get install -y kubectl
     ```
-8. Get the Kubernetes config files for your new AKS cluster
+* Get the Kubernetes config files for your new AKS cluster
     ```
     az aks get-credentials -n $CLUSTER_NAME -g $NAME
     ```
 
-9.  Verify you have API access to your new AKS cluster
+*  Verify you have API access to your new AKS cluster
 
     > Note: It can take 5 minutes for your nodes to appear and be in READY state. You can run `watch kubectl get nodes` to monitor status. 
     
@@ -108,7 +108,7 @@ git clone https://github.com/Azure/blackbelt-aks-hackfest.git
 
 ## Revisamos/Editamos archivos de configuraicon YAML
 
-1. In Azure Cloud Shell edit `heroes-db.yaml` using `vi`
+* In Azure Cloud Shell edit `heroes-db.yaml` using `vi`
     ```
     cd ~/blackbelt-aks-hackfest/labs/helper-files
 
@@ -126,7 +126,7 @@ git clone https://github.com/Azure/blackbelt-aks-hackfest.git
             name:  heroes-db-cntnr
         ```
 
-2. In Azure Cloud Shell edit `heroes-web-api.yaml` using `vi`
+* In Azure Cloud Shell edit `heroes-web-api.yaml` using `vi`
     ```
     cd ~/blackbelt-aks-hackfest/labs/helper-files
 

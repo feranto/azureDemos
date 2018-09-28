@@ -16,7 +16,7 @@ En este taller aprenderemos los siguientes conceptos:
     *   Contenedores
     *   Networking
 *   Registros de Contenedores
-*   *   Orquestadores de Contenedores
+*   Orquestadores de Contenedores
 *   Conceptos de Kubernetes
     *   Arquitectura Kubernetes
         *   Master Nodes

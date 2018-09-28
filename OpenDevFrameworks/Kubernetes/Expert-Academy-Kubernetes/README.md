@@ -24,3 +24,4 @@ En este taller aprenderemos los siguientes conceptos:
 ## Laboratorio Práctico
 *   [Parte 1: Aplicación Heroes MEAN en AKS](https://feranto.github.io/azureDemos/OpenDevFrameworks/Kubernetes/Expert-Academy-Kubernetes/)
 *   [Parte 2: Escalando usando Contenedores Serverless](https://github.com/Azure/blackbelt-aks-hackfest/blob/master/labs/day2-labs/virtual-kubelet-aci.md)
+*   [Parte 3: Probando Draft](https://github.com/Azure/draft/blob/master/docs/getting-started.md)

@@ -18,6 +18,7 @@ En este taller aprenderemos los siguientes conceptos:
 *   Registros de Contenedores
 
 ## Laboratorio Práctico
-*   ()[Parte 1: Aplicación Heroes MEAN]
-*   ()[Parte 2: Llevando nuestra aplicación a contenedores Docker]
-*   ()[Parte 3: Guardando y Construyendo nuestras imagenes en la nube]
+*   [Parte 1: Aplicación Heroes MEAN](https://feranto.github.io/azureDemos/CloudComputing/IAAS-Heroes-App/)
+*   [Parte 2: Llevando nuestra aplicación a contenedores Docker](https://feranto.github.io/azureDemos/OpenDevFrameworks/Docker/Docker-Heroes-App/)
+*   [Parte 3: Guardando y Construyendo nuestras imagenes en la nube](https://github.com/Azure/blackbelt-aks-hackfest/blob/master/labs/day1-labs/02-dockerize-apps(alt-acr-build).md)
+    *   [(Alternativo)Parte 3: Guardando y Construyendo nuestras imagenes en la nube](https://github.com/Azure/blackbelt-aks-hackfest/blob/master/labs/day1-labs/02-dockerize-apps.md)

@@ -1,6 +1,6 @@
 # Expert Academy Santiago 2018!
 
- <img width='' src='resources/banner.png'/> 
+ <img width='' src='images/banner.png'/> 
 
 ## Taller Introducción a Contenedores y Docker
 

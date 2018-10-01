@@ -30,7 +30,7 @@ az group create --name $RG_NAME --location $REGION
 ```
 
 *   Una vez creado el grupo de recurso, creamos una vm ubuntu
-```bash
+```
 # Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
 az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuServer:18.04-LTS:18.04.201804262 --generate-ssh-keys
 
@@ -81,7 +81,7 @@ La API para la aplicación está escrita en javascript, corriendo en [Node.js](h
 
 * Primero actualizamos las dependencias y corremos la app utilizando node dentro de la vm
 
-    ```bash
+    ```
     cd ~/blackbelt-aks-hackfest/app/api
 
     npm install && npm run localmachine
@@ -89,7 +89,7 @@ La API para la aplicación está escrita en javascript, corriendo en [Node.js](h
 
 * Podemos abrir una nueva terminal a la vm y probar la api localmente usando curl
 
-    ```bash
+    ```
     curl http://localhost:3000/api/heroes
     ```
     
@@ -101,7 +101,7 @@ El frontend de la aplicación está escrita en [Vue.js](https://vuejs.org/Vue "V
 * Abrimos una nueva terminal a la vm
 * Actualizamos las dependencias utilizando npm
 
-```bash
+```
 cd ~/blackbelt-aks-hackfest/app/web
 
 npm install && npm run localmachine
@@ -111,7 +111,7 @@ npm install && npm run localmachine
     La vm deberia tener abierto el puerto 8080. Deberiamos poder navegar al siguiente link: <IP_PUBLICA_VM>:8080 
 
     Tambien lo podemos probar localmente desde la terminal utilizando curl:
-```bash
+```
 curl http://localhost:8080
 ```
 

@@ -30,14 +30,18 @@ az group create --name $RG_NAME --location $REGION
 ```
 
 *   Una vez creado el grupo de recurso, creamos una vm ubuntu
+*   Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
 ```
-# Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
 az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuServer:18.04-LTS:18.04.201804262 --generate-ssh-keys
+```
 
-# Abrimos el puerto 8080 para permitir trafico web.
+*   Abrimos el puerto 8080 para permitir trafico web.
+
+```
 az vm open-port --port 8080 --resource-group $RG_NAME --name $VM_NAME
-
-# Usamos la extension CustomScript para instalar nodejs, npm, mongodb y docker
+```
+*   Usamos la extension CustomScript para instalar nodejs, npm, mongodb y docker
+```
 az vm extension set \
   --publisher Microsoft.Azure.Extensions \
   --version 2.0 \
@@ -57,10 +61,10 @@ ssh <TU_DIRECCIÓN_IP_PUBLICA>
 *   Antes de iniciar mongodb le cambiaremos el puerto a 27019 para ello ejecutamos el siguiente comando
 
 ```
-##Cambiamos el puerto en el archivo de configuracion de mongodb
 sudo sed -i -- 's/#port = 27017/port = 27019/g' /etc/mongodb.conf
-
-##Reiniciamos el servicio de Mongodb
+```
+*   Reiniciamos el servicio de Mongodb
+```
 sudo service mongodb restart
 ```
 *   Clonamos los datos de la aplicación y la aplicación

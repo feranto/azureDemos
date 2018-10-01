@@ -71,7 +71,8 @@ sudo service mongodb restart
 git clone https://github.com/Azure/blackbelt-aks-hackfest.git
 ```
 
-*   Cargamos la data en mongodb 
+*   Cargamos la data en mongodb
+
 ```
 cd ~/blackbelt-aks-hackfest/app/db
 

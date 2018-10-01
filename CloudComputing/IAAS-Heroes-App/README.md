@@ -29,8 +29,7 @@ REGION=eastus
 az group create --name $RG_NAME --location $REGION
 ```
 
-*   Una vez creado el grupo de recurso, creamos una vm ubuntu
-*   Creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes
+*   Una vez creado el grupo de recurso, creamos una nueva maquina virtual, esto creara llaves SSH si no estan presentes:
 ```
 az vm create --resource-group $RG_NAME --name $VM_NAME --image Canonical:UbuntuServer:18.04-LTS:18.04.201804262 --generate-ssh-keys
 ```
@@ -85,17 +84,17 @@ La API para la aplicación está escrita en javascript, corriendo en [Node.js](h
 
 * Primero actualizamos las dependencias y corremos la app utilizando node dentro de la vm
 
-    ```
-    cd ~/blackbelt-aks-hackfest/app/api
+```
+cd ~/blackbelt-aks-hackfest/app/api
 
-    npm install && npm run localmachine
-    ```
+npm install && npm run localmachine
+```
 
 * Podemos abrir una nueva terminal a la vm y probar la api localmente usando curl
 
-    ```
-    curl http://localhost:3000/api/heroes
-    ```
+```
+curl http://localhost:3000/api/heroes
+```
     
 
 ## Aplicación web - Vue.js, Node.js

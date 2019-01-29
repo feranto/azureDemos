@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+  labels:
+    app: mongodb-service
+spec:
+  type: ClusterIP
+  ports:
+    - name: mongodb
+      port: 27017
+      targetPort: 27017
+  selector:
+    name: mongodb
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  mongodb-deploy
+  labels:
+    name:  mongodb
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  mongodb
+    spec:
+      containers:
+      - image: mongo
+        name:  mongodb-cntnr
+        resources:
+          requests:
+            cpu: ".5"
+            memory: "128M"
+        volumeMounts:
+        - mountPath: "/data/db"
+          name: volume1
+        - mountPath: "/data/configdb"
+          name: volume2
+        ports:
+        - containerPort:  27017
+          name:  mongodb
+        imagePullPolicy: Always
+      restartPolicy: Always
+      volumes:
+        - name: volume1
+          persistentVolumeClaim:
+            claimName: azure-managed-disk1
+        - name: volume2
+          persistentVolumeClaim:
+            claimName: azure-managed-disk2

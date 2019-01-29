@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: init
+spec:
+  template:
+    spec:
+      containers:
+      - name: init
+        image: ferantotar2019registry.azurecr.io/fabmedicalapp/content-init
+        env:
+          - name: MONGODB_CONNECTION
+            value: mongodb://mongodb-service:27017/contentdb
+      restartPolicy: Never
+  backoffLimit: 4

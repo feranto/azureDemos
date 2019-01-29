@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: api-app
+  labels:
+    k8s-app: api-app
+  annotations:
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      k8s-app: api-app
+  template:
+    metadata:
+      name: api-app
+      creationTimestamp: 
+      labels:
+        k8s-app: api-app
+    spec:
+      containers:
+      - name: api-app
+        image: ferantotar2019registry.azurecr.io/fabmedicalapp/content-api
+        resources:
+          requests:
+            cpu: 500m
+            memory: 128Mi
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%

@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-web-service
+  labels:
+    app: app-web-service
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+  selector:
+    name: app-web
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  app-web-deploy
+  labels:
+    name:  app-web
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  app-web
+    spec:
+      containers:
+      - image: ferantotar2019registry.azurecr.io/fabmedicalapp/content-web
+        name:  app-web-cntnr
+        resources:
+          requests:
+            cpu: ".5"
+            memory: "128M"
+        env:
+        - name:  CONTENT_API_URL
+          value:  http://10.0.209.98:3001
+        ports:
+        - containerPort:  3000
+          name:  app-web
+        imagePullPolicy: Always
+      restartPolicy: Always

@@ -9,7 +9,7 @@ Bienvenidos al taller introductorio para CosmosDB
 En este taller aprenderemos los siguientes conceptos:
      
 ## Laboratorio Práctico
-*   [Creando una base de datos CosmosDB](https://feranto.github.io/azureDemos/OpenDevFrameworks/Kubernetes/Kubernetes-Heroes-App/)
-*   [Manipulando datos utilizando el Portal de Azure](https://github.com/Azure/blackbelt-aks-hackfest/blob/master/labs/day2-labs/virtual-kubelet-aci.md)
-*   [Accediendo los datos con diferentes API's (Mongo y SQL)](https://github.com/Azure/draft/blob/master/docs/getting-started.md)
-*   [Ingestando data en CosmosDB desde Data Factory](https://github.com/Azure/draft/blob/master/docs/getting-started.md)
+*   [Creando una base de datos CosmosDB](https://feranto.github.io/azureDemos/Database/CosmosDB/ExpertAcademyLabJan19/labs/lab_01/README.md)
+*   [Manipulando datos utilizando el Portal de Azure](https://feranto.github.io/azureDemos/Database/CosmosDB/ExpertAcademyLabJan19/labs/lab_02/README.md)
+*   [Accediendo los datos con diferentes API's (Mongo y SQL)](https://feranto.github.io/azureDemos/Database/CosmosDB/ExpertAcademyLabJan19/labs/lab_03/README.md)
+*   [Ingestando data en CosmosDB desde Data Factory](https://feranto.github.io/azureDemos/Database/CosmosDB/ExpertAcademyLabJan19/labs/lab_04/README.md)

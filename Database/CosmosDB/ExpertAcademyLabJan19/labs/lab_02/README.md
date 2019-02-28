@@ -1,4 +1,4 @@
-# Lab 3 - Inserting/Updating/Querying via the Azure Portal as the Primary Interface
+# Lab 2 - Inserting/Updating/Querying via the Azure Portal as the Primary Interface
 
 While the primary way to interact with your Cosmos DB instance is via an SDK, DB API Driver or native command line client (e.g. Mongo, SQL, Cassandra, Gremlin) for your programming language of choice, you can also interact with the database via the Azure Portal.
 

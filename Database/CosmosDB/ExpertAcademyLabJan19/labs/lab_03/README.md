@@ -1,4 +1,4 @@
-# Lab 4 - Demo: accessing via a different wire protocol API (i.e. Mongo && SQL)
+# Lab 3 - Demo: accessing via a different wire protocol API (i.e. Mongo && SQL)
 
 This lab is primarily an instructor led demo.  You can follow along given the provided instructions.
 

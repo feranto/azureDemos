@@ -1,4 +1,4 @@
-# Lab 2 - Uploading Data to Cosmos DB with Azure Data Factory v2
+# Lab 4 - Uploading Data to Cosmos DB with Azure Data Factory v2
 
 In this lab, you will be creating a new Database and Collection, leverage this new Database by uploading flight data from a CSV file to this Cosmos DB instance via Azure Data Factory (ADF).  The CSV data is found at ```https://github.com/OSSCanada/cosmos-db-workshop/raw/master/labs/helper_files/sample_data/sample_data.csv``` Take note of this url as you will need to copy and paste it into ADF as a data source for the data pipeline we're about to create.
 

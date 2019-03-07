@@ -19,7 +19,7 @@ Como resultado tendremos las siguientes trazas:
 
 ![2 dependencias detectadas][dosDependencias]
 
-[dosDependencias]: imagenes/conDependencia.png "2 Dependencias detectadas"
+[dosDependencias]: images/conDependencia.png "2 Dependencias detectadas"
 
 
 # Escenario final
@@ -28,7 +28,7 @@ Para cambiar este compartamiento aplicamos el [siguiente script](telemetryPrepro
 
 ![Dependencia Eliminada][sinDependencia]
 
-[sinDependencia]: imagenes/dependenciaEliminada.png  "Dependencia Eliminada"
+[sinDependencia]: images/dependenciaEliminada.png  "Dependencia Eliminada"
 
 # Conclusiones
 

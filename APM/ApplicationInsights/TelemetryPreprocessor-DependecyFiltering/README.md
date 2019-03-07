@@ -17,14 +17,18 @@ Primero habilitamos la detección de dependencias dentro del frontend de la sigu
 
 Como resultado tendremos las siguientes trazas:
 
-[2 dependencias detectadas](imagenes/conDependencia.png)
+![2 dependencias detectadas][dosDependencias]
+
+[dosDependencias]: imagenes/conDependencia.png "2 Dependencias detectadas"
 
 
 # Escenario final
 
 Para cambiar este compartamiento aplicamos el [siguiente script](telemetryPreprocessor.js) en el frontend y obtendremos el siguiente resultado:
 
-[1 dependencia detectada](imagenes/dependenciaEliminada.png)
+![Dependencia Eliminada][sinDependencia]
+
+[sinDependencia]: imagenes/dependenciaEliminada.png  "Dependencia Eliminada"
 
 # Conclusiones
 

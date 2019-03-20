@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.namespace.name }}
+  labels:
+    k8s-app: {{ .Values.deployment.name }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      k8s-app: {{ .Values.deployment.name }}
+  template:
+    metadata:
+      labels:
+        k8s-app: {{ .Values.deployment.name }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.name }}
+        image: {{ .Values.deployment.image }}{{ .Values.deployment.imageVersion }}
+        env:
+          - name: HACK_YEAR
+            value: "2018"
+          - name: HACK_MONITORING_ENABLED
+            value: "false"
+          - name: HACK_SECURITY_ENABLED
+            value: "false"
+        ports:
+        - containerPort: {{ .Values.ports.port }}
+          name: {{ .Values.ports.name }}
+          protocol: {{ .Values.ports.protocol }}

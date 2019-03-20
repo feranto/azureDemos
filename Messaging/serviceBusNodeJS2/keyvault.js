@@ -2,10 +2,10 @@
 var keyVault = require('azure-keyvault');
 var AuthenticationContext = require('adal-node').AuthenticationContext;
 
-var clientId = '<YOUR_APP_ID>';
-var clientSecret = '<YOUR_APP_SECRET>';
+var clientId = '726a46c2-21e1-45ee-96cf-c6ca559d7729';
+var clientSecret = 'b9a440e1-7625-4bb7-b394-1fab0f4191f7';
 
-var secretIdentifier = '<YOUR_SECRET_IDENTIFIER>';
+var secretIdentifier = 'https://workshopmessagingretail.vault.azure.net/secrets/servicebusConnectionString/f83093fdde7c48d0a037f96dd6f2a6e2';
 
 var credentials = new keyVault.KeyVaultCredentials(authenticator);
 var client = new keyVault.KeyVaultClient(credentials);
